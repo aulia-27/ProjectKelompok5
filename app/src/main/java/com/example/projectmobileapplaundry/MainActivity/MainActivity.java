@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
         rvProsesLaundry = findViewById(R.id.rvProsesLaundry);
         rvRiwayatLaundry = findViewById(R.id.rvRiwayatLaundry);
 
-        rvListMenu.setLayoutManager(new GridLayoutManager(this, 2, RecyclerView.VERTICAL, false));
+        rvListMenu.setLayoutManager(new GridLayoutManager(this, 4, RecyclerView.VERTICAL, false));
         rvListMenu.setHasFixedSize(true);
 
         mainAdapterPL = new MainAdapterProsesLaundry(this);
