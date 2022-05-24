@@ -10,19 +10,25 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ProjectMobileAppLaundry">
         <activity
+            android:name=".DaftarHarga.ListPriceActivity"
+            android:exported="true" />
+        <activity
+            android:name=".DaftarHarga.ListPriceActiviry"
+            android:exported="true" />
+        <activity
             android:name=".MainActivity.MainActivity"
             android:exported="true" />
         <activity
-            android:name=".History.History"
+            android:name=".History.HistoryActivity"
             android:exported="true" />
         <activity
-            android:name=".Laundry.Laundry"
+            android:name=".Laundry.LaundryActivity"
             android:exported="true" />
         <activity
-            android:name=".Login.Register"
+            android:name=".Login.RegisterActivity"
             android:exported="true" />
         <activity
-            android:name=".Login.Login"
+            android:name=".Login.LoginActivity"
             android:exported="true" />
         <activity
             android:name=".SplashScreenLaundry"

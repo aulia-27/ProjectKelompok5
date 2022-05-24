@@ -9,6 +9,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.example.projectmobileapplaundry.R;
 import com.example.projectmobileapplaundry.model.ModelProsesLaundry;
 
@@ -32,6 +33,11 @@ public class MainAdapterProsesLaundry extends RecyclerView.Adapter<MainAdapterPr
     @Override
     public void onBindViewHolder(@NonNull MainViewHolder holder, int position) {
         ModelProsesLaundry modelProsesLaundry = modelResultArrayList.get(position);
+        holder.txtAntrianProses.setText(""+modelProsesLaundry.getId());
+        holder.txtTanggalProses.setText(""+modelProsesLaundry.getTanggal());
+        holder.txtItemProses.setText(""+modelProsesLaundry.getItem());
+        holder.txtProses.setText(""+modelProsesLaundry.getStatus());
+        holder.txtHargaProses.setText(""+modelProsesLaundry.getHarga());
     }
 
     @Override
@@ -40,14 +46,14 @@ public class MainAdapterProsesLaundry extends RecyclerView.Adapter<MainAdapterPr
     }
 
     public static class MainViewHolder extends RecyclerView.ViewHolder {
-        TextView txtAntrian, txtTanggal, txtItem, txtProses, txtHarga;
+        TextView txtAntrianProses, txtTanggalProses, txtItemProses, txtProses, txtHargaProses;
         public MainViewHolder(@NonNull View itemView) {
             super(itemView);
-            txtAntrian = itemView.findViewById(R.id.txtAntrian);
-            txtTanggal = itemView.findViewById(R.id.txtTanggal);
-            txtItem = itemView.findViewById(R.id.txtItem);
+            txtAntrianProses = itemView.findViewById(R.id.txtAntrian);
+            txtTanggalProses = itemView.findViewById(R.id.txtTanggal);
+            txtItemProses = itemView.findViewById(R.id.txtItem);
             txtProses = itemView.findViewById(R.id.txtProsesLaundry);
-            txtHarga = itemView.findViewById(R.id.txtHargaTotal);
+            txtHargaProses = itemView.findViewById(R.id.txtHargaTotal);
         }
     }
 }

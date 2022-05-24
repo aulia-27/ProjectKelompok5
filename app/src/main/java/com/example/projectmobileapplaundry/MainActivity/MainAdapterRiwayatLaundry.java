@@ -34,6 +34,10 @@ public class MainAdapterRiwayatLaundry extends RecyclerView.Adapter<MainAdapterR
     @Override
     public void onBindViewHolder(@NonNull MainViewHolder holder, int position) {
         ModelRiwayatLaundry modelRiwayatLaundry = modelResultArrayList.get(position);
+        holder.txtAntrianRiwayat.setText(""+modelRiwayatLaundry.getId());
+        holder.txtTanggalRiwayat.setText(""+modelRiwayatLaundry.getTanggal());
+        holder.txtItemRiwayat.setText(""+modelRiwayatLaundry.getItem()+" Item");
+        holder.txtHargaRiwayat.setText("Rp."+modelRiwayatLaundry.getHarga());
     }
 
     @Override
@@ -42,13 +46,13 @@ public class MainAdapterRiwayatLaundry extends RecyclerView.Adapter<MainAdapterR
     }
 
     public static class MainViewHolder extends RecyclerView.ViewHolder {
-        TextView txtAntrian, txtTanggal, txtItem, txtHarga;
+        TextView txtAntrianRiwayat, txtTanggalRiwayat, txtItemRiwayat, txtHargaRiwayat;
         public MainViewHolder(@NonNull View itemView) {
             super(itemView);
-            txtAntrian = itemView.findViewById(R.id.txtAntrianRiwayat);
-            txtTanggal = itemView.findViewById(R.id.txtTanggalRiwayat);
-            txtItem = itemView.findViewById(R.id.txtItemRiwayat);
-            txtHarga = itemView.findViewById(R.id.txtHargaTotalRiwayat);
+            txtAntrianRiwayat = itemView.findViewById(R.id.txtAntrianRiwayat);
+            txtTanggalRiwayat = itemView.findViewById(R.id.txtTanggalRiwayat);
+            txtItemRiwayat = itemView.findViewById(R.id.txtItemRiwayat);
+            txtHargaRiwayat = itemView.findViewById(R.id.txtHargaTotalRiwayat);
         }
     }
 }

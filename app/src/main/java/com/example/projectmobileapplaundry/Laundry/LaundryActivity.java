@@ -1,4 +1,4 @@
-package com.example.projectmobileapplaundry.History;
+package com.example.projectmobileapplaundry.Laundry;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -6,11 +6,11 @@ import android.os.Bundle;
 
 import com.example.projectmobileapplaundry.R;
 
-public class History extends AppCompatActivity {
+public class LaundryActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_history);
+        setContentView(R.layout.activity_laundry);
     }
 }

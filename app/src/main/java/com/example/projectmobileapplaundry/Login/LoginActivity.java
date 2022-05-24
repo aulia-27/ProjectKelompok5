@@ -1,4 +1,4 @@
-package com.example.projectmobileapplaundry.Laundry;
+package com.example.projectmobileapplaundry.Login;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -6,11 +6,11 @@ import android.os.Bundle;
 
 import com.example.projectmobileapplaundry.R;
 
-public class Laundry extends AppCompatActivity {
+public class LoginActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_laundry);
+        setContentView(R.layout.activity_login);
     }
 }
