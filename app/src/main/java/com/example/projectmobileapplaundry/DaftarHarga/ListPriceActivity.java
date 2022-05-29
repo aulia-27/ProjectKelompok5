@@ -8,6 +8,7 @@ import com.example.projectmobileapplaundry.R;
 
 public class ListPriceActivity extends AppCompatActivity {
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

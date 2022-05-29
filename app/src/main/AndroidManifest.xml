@@ -13,10 +13,7 @@
             android:name=".DaftarHarga.ListPriceActivity"
             android:exported="true" />
         <activity
-            android:name=".DaftarHarga.ListPriceActiviry"
-            android:exported="true" />
-        <activity
-            android:name=".MainActivity.MainActivity"
+            android:name=".SplashScreenLaundry"
             android:exported="true" />
         <activity
             android:name=".History.HistoryActivity"
@@ -31,7 +28,7 @@
             android:name=".Login.LoginActivity"
             android:exported="true" />
         <activity
-            android:name=".SplashScreenLaundry"
+            android:name=".MainActivity.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

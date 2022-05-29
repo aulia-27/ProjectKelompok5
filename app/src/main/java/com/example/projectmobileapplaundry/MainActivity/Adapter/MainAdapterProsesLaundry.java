@@ -1,4 +1,4 @@
-package com.example.projectmobileapplaundry.MainActivity;
+package com.example.projectmobileapplaundry.MainActivity.Adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -7,20 +7,22 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.bumptech.glide.Glide;
 import com.example.projectmobileapplaundry.R;
-import com.example.projectmobileapplaundry.model.ModelProsesLaundry;
+import com.example.projectmobileapplaundry.MainActivity.Model.ProsesLaundryModel;
 
-import java.util.ArrayList;
+import java.util.List;
 
 public class MainAdapterProsesLaundry extends RecyclerView.Adapter<MainAdapterProsesLaundry.MainViewHolder> {
-    ArrayList<ModelProsesLaundry> modelResultArrayList = new ArrayList<>();
     Context context;
+    private List<ProsesLaundryModel> mProsesLaundries;
+    GridLayoutManager gridLayoutManager;
 
-    public MainAdapterProsesLaundry(Context context){
+    public MainAdapterProsesLaundry(Context context, List<ProsesLaundryModel> mProsesLaundries){
         this.context = context;
+        this.mProsesLaundries = mProsesLaundries;
     }
 
     @NonNull
@@ -32,17 +34,17 @@ public class MainAdapterProsesLaundry extends RecyclerView.Adapter<MainAdapterPr
 
     @Override
     public void onBindViewHolder(@NonNull MainViewHolder holder, int position) {
-        ModelProsesLaundry modelProsesLaundry = modelResultArrayList.get(position);
-        holder.txtAntrianProses.setText(""+modelProsesLaundry.getId());
-        holder.txtTanggalProses.setText(""+modelProsesLaundry.getTanggal());
-        holder.txtItemProses.setText(""+modelProsesLaundry.getItem());
-        holder.txtProses.setText(""+modelProsesLaundry.getStatus());
-        holder.txtHargaProses.setText(""+modelProsesLaundry.getHarga());
+        ProsesLaundryModel prosesLaundryModel = mProsesLaundries.get(position);
+        holder.txtAntrianProses.setText(""+ prosesLaundryModel.getId());
+        holder.txtTanggalProses.setText(""+ prosesLaundryModel.getTanggal());
+        holder.txtItemProses.setText(""+ prosesLaundryModel.getItem());
+        holder.txtProses.setText(""+ prosesLaundryModel.getStatus());
+        holder.txtHargaProses.setText(""+ prosesLaundryModel.getHarga());
     }
 
     @Override
     public int getItemCount() {
-        return modelResultArrayList.size();
+        return mProsesLaundries.size();
     }
 
     public static class MainViewHolder extends RecyclerView.ViewHolder {
