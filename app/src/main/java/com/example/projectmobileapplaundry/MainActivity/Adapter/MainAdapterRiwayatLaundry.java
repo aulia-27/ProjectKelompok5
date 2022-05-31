@@ -37,6 +37,7 @@ public class MainAdapterRiwayatLaundry extends RecyclerView.Adapter<MainAdapterR
     @Override
     public void onBindViewHolder(@NonNull MainViewHolder holder, int position) {
         RiwayatLaundryModel riwayatLaundryModel = mRiwayatLaundries.get(position);
+        holder.txtId_rl.setText(""+riwayatLaundryModel.getId());
         holder.txtAntrianRiwayat.setText(""+ riwayatLaundryModel.getId());
         holder.txtTanggalRiwayat.setText(""+ riwayatLaundryModel.getTanggal());
         holder.txtItemRiwayat.setText(""+ riwayatLaundryModel.getItem()+" Item");
@@ -49,13 +50,15 @@ public class MainAdapterRiwayatLaundry extends RecyclerView.Adapter<MainAdapterR
     }
 
     public static class MainViewHolder extends RecyclerView.ViewHolder {
-        TextView txtAntrianRiwayat, txtTanggalRiwayat, txtItemRiwayat, txtHargaRiwayat;
+        TextView txtId_rl, txtAntrianRiwayat, txtTanggalRiwayat, txtItemRiwayat, txtHargaRiwayat, txtStatusRiwayat;
         public MainViewHolder(@NonNull View itemView) {
             super(itemView);
-            txtAntrianRiwayat = itemView.findViewById(R.id.txtAntrianRiwayat);
-            txtTanggalRiwayat = itemView.findViewById(R.id.txtTanggalRiwayat);
-            txtItemRiwayat = itemView.findViewById(R.id.txtItemRiwayat);
-            txtHargaRiwayat = itemView.findViewById(R.id.txtHargaTotalRiwayat);
+            txtId_rl = itemView.findViewById(R.id.id_PL);
+            txtAntrianRiwayat = itemView.findViewById(R.id.txtAntrian_RL);
+            txtTanggalRiwayat = itemView.findViewById(R.id.txtTanggal_RL);
+            txtItemRiwayat = itemView.findViewById(R.id.txtJumlahItem_RL);
+            txtHargaRiwayat = itemView.findViewById(R.id.txtHargaTotal_RL);
+            txtStatusRiwayat = itemView.findViewById(R.id.txtStatus_RL);
         }
     }
 }

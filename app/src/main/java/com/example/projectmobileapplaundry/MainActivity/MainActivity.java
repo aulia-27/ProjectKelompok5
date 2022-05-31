@@ -9,11 +9,12 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.RelativeLayout;
 
-import com.example.projectmobileapplaundry.DaftarHarga.ListPriceActivity;
+import com.example.projectmobileapplaundry.DaftarHarga.DaftarHargaActivity;
 import com.example.projectmobileapplaundry.Laundry.LaundryActivity;
 import com.example.projectmobileapplaundry.R;
 import com.example.projectmobileapplaundry.MainActivity.Model.ProsesLaundryModel;
 import com.example.projectmobileapplaundry.MainActivity.Model.RiwayatLaundryModel;
+import com.example.projectmobileapplaundry.Riwayat.RiwayatActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -68,7 +69,7 @@ public class MainActivity extends AppCompatActivity {
         rlDaftarHarga.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intentRlDaftarHarga = new Intent(new Intent(MainActivity.this, ListPriceActivity.class));
+                Intent intentRlDaftarHarga = new Intent(new Intent(MainActivity.this, DaftarHargaActivity.class));
                 startActivity(intentRlDaftarHarga);
             }
         });
@@ -76,17 +77,10 @@ public class MainActivity extends AppCompatActivity {
         rlRiwayat.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intentRlRiwayat = new Intent(new Intent(MainActivity.this, LaundryActivity.class));
+                Intent intentRlRiwayat = new Intent(new Intent(MainActivity.this, RiwayatActivity.class));
                 startActivity(intentRlRiwayat);
             }
         });
 
-        rlLainnya.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intentRlLainnya = new Intent(new Intent(MainActivity.this, LaundryActivity.class));
-                startActivity(intentRlLainnya);
-            }
-        });
     }
 }

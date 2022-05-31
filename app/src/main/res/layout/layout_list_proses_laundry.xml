@@ -16,7 +16,8 @@
         android:padding="15dp">
 
         <TextView
-            android:id="@+id/txtAntrian"
+            android:id="@+id/id_PL"
+            android:visibility="gone"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="D000"
@@ -25,7 +26,26 @@
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/txtTanggal"
+            android:id="@+id/id_user_PL"
+            android:visibility="gone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="D000"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/txtAntrian_PL"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="D000"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/txtTanggal_PL"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
@@ -34,7 +54,7 @@
             android:textSize="14sp" />
 
         <TextView
-            android:id="@+id/txtItem"
+            android:id="@+id/txtItem_PL"
             android:layout_width="wrap_content"
             android:layout_marginTop="20dp"
             android:layout_height="wrap_content"
@@ -50,7 +70,7 @@
             android:layout_marginTop="18dp">
 
             <TextView
-                android:id="@+id/txtStatus"
+                android:id="@+id/txtStatus_PL"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Sedang Proses"
@@ -59,12 +79,12 @@
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/txtHargaTotal"
+                android:id="@+id/txtHargaTotal_PL"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
                 android:layout_marginLeft="100dp"
-                android:layout_toRightOf="@id/txtStatus"
+                android:layout_toRightOf="@id/txtStatus_PL"
                 android:text="Rp.30,000"
                 android:textAlignment="textEnd"
                 android:textColor="@color/black"
@@ -75,7 +95,7 @@
     </LinearLayout>
 
     <TextView
-        android:id="@+id/txtDetail"
+        android:id="@+id/txtDetail_PL"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="end"

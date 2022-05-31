@@ -35,11 +35,13 @@ public class MainAdapterProsesLaundry extends RecyclerView.Adapter<MainAdapterPr
     @Override
     public void onBindViewHolder(@NonNull MainViewHolder holder, int position) {
         ProsesLaundryModel prosesLaundryModel = mProsesLaundries.get(position);
-        holder.txtAntrianProses.setText(""+ prosesLaundryModel.getId());
+        holder.txtAntrianProses.setText(""+ prosesLaundryModel.getKode_antrian());
+        holder.txtAntrianProses.setText(""+ prosesLaundryModel.getKode_antrian());
+        holder.txtAntrianProses.setText(""+ prosesLaundryModel.getKode_antrian());
         holder.txtTanggalProses.setText(""+ prosesLaundryModel.getTanggal());
         holder.txtItemProses.setText(""+ prosesLaundryModel.getItem());
-        holder.txtProses.setText(""+ prosesLaundryModel.getStatus());
         holder.txtHargaProses.setText(""+ prosesLaundryModel.getHarga());
+        holder.txtProses.setText(""+ prosesLaundryModel.getStatus());
     }
 
     @Override
@@ -48,14 +50,16 @@ public class MainAdapterProsesLaundry extends RecyclerView.Adapter<MainAdapterPr
     }
 
     public static class MainViewHolder extends RecyclerView.ViewHolder {
-        TextView txtAntrianProses, txtTanggalProses, txtItemProses, txtProses, txtHargaProses;
+        TextView txtId_PL, txtId_User_PL, txtAntrianProses, txtTanggalProses, txtItemProses, txtProses, txtHargaProses;
         public MainViewHolder(@NonNull View itemView) {
             super(itemView);
-            txtAntrianProses = itemView.findViewById(R.id.txtAntrian);
-            txtTanggalProses = itemView.findViewById(R.id.txtTanggal);
-            txtItemProses = itemView.findViewById(R.id.txtItem);
-            txtProses = itemView.findViewById(R.id.txtProsesLaundry);
-            txtHargaProses = itemView.findViewById(R.id.txtHargaTotal);
+            txtId_PL = itemView.findViewById(R.id.id_PL);
+            txtId_User_PL = itemView.findViewById(R.id.id_user_PL);
+            txtAntrianProses = itemView.findViewById(R.id.txtAntrian_PL);
+            txtTanggalProses = itemView.findViewById(R.id.txtTanggal_PL);
+            txtItemProses = itemView.findViewById(R.id.txtItem_PL);
+            txtHargaProses = itemView.findViewById(R.id.txtHargaTotal_PL);
+            txtProses = itemView.findViewById(R.id.txtStatus_PL);
         }
     }
 }

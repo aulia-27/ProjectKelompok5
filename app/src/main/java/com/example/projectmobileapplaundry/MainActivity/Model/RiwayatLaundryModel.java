@@ -13,12 +13,15 @@ public class RiwayatLaundryModel {
     private int item;
     @SerializedName("harga")
     private double harga;
+    @SerializedName("staus")
+    private String status;
 
-    public RiwayatLaundryModel(int id, Date tanggal, int item, double harga) {
+    public RiwayatLaundryModel(int id, Date tanggal, int item, double harga, String status) {
         this.id = id;
         this.tanggal = tanggal;
         this.item = item;
         this.harga = harga;
+        this.status = status;
     }
 
     public int getId() {
@@ -51,5 +54,13 @@ public class RiwayatLaundryModel {
 
     public void setHarga(double harga) {
         this.harga = harga;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 }

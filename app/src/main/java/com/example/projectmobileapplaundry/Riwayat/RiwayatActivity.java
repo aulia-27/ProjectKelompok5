@@ -1,4 +1,4 @@
-package com.example.projectmobileapplaundry.DaftarHarga;
+package com.example.projectmobileapplaundry.Riwayat;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -6,12 +6,11 @@ import android.os.Bundle;
 
 import com.example.projectmobileapplaundry.R;
 
-public class ListPriceActivity extends AppCompatActivity {
-
+public class RiwayatActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_list_price);
+        setContentView(R.layout.activity_history);
     }
 }

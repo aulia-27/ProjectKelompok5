@@ -49,14 +49,16 @@ public class LaundryAdapter extends RecyclerView.Adapter<LaundryAdapter.MainView
     }
 
     public static class MainViewHolder extends RecyclerView.ViewHolder  {
-        TextView txtNamaItem, txtHargaItem;
+        TextView txtIdItem, txtNamaItem, txtHargaItem, txtJumlahItem;
         ImageView gambarItem;
 
         public MainViewHolder(@NonNull View itemView) {
             super(itemView);
-            txtNamaItem = itemView.findViewById(R.id.txtNamaBarang);
-            txtHargaItem = itemView.findViewById(R.id.txtHargaBarang);
-            gambarItem = itemView.findViewById(R.id.gambarBarang);
+            txtIdItem = itemView.findViewById(R.id.id_L);
+            txtNamaItem = itemView.findViewById(R.id.txtNamaBarang_L);
+            txtHargaItem = itemView.findViewById(R.id.txtHargaBarang_L);
+            txtJumlahItem = itemView.findViewById(R.id.txtJumlahItem_L);
+            gambarItem = itemView.findViewById(R.id.gambarBarang_L);
         }
     }
 }

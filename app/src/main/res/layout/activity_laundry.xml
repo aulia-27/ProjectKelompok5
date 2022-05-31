@@ -94,8 +94,8 @@
             android:layout_marginLeft="150dp"
             android:layout_marginRight="10dp"
             android:layout_toRightOf="@id/txtJmlItem"
+            android:text="Daftar Harga : "
             android:textAlignment="textEnd"
-            android:text="Rp.18.000"
             android:textColor="@color/black"
             android:textSize="14sp"
             android:textStyle="bold" />

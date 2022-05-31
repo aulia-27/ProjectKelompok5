@@ -1,4 +1,4 @@
-package com.example.projectmobileapplaundry.History;
+package com.example.projectmobileapplaundry.DaftarHarga;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -6,11 +6,12 @@ import android.os.Bundle;
 
 import com.example.projectmobileapplaundry.R;
 
-public class HistoryActivity extends AppCompatActivity {
+public class DaftarHargaActivity extends AppCompatActivity {
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_history);
+        setContentView(R.layout.activity_list_price);
     }
 }

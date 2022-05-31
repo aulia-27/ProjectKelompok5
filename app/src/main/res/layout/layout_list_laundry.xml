@@ -22,8 +22,18 @@
             android:orientation="horizontal"
             android:padding="15dp">
 
+            <TextView
+                android:id="@+id/id_L"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="id"
+                android:visibility="gone"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
             <ImageView
-                android:id="@+id/gambarBarang"
+                android:id="@+id/gambarBarang_L"
                 android:layout_width="0dp"
                 android:layout_height="70dp"
                 android:layout_marginEnd="20dp"
@@ -38,7 +48,7 @@
                 android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/txtNamaBarang"
+                    android:id="@+id/txtNamaBarang_L"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Kaos"
@@ -47,7 +57,7 @@
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/txtHargaBarang"
+                    android:id="@+id/txtHargaBarang_L"
                     android:layout_marginTop="25dp"
                     android:textStyle="bold"
                     android:layout_width="wrap_content"
@@ -72,7 +82,7 @@
                     android:src="@drawable/remove"/>
 
                 <TextView
-                    android:id="@+id/tvPriceKaos"
+                    android:id="@+id/txtJumlahItem_L"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"

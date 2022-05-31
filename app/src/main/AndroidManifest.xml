@@ -10,13 +10,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ProjectMobileAppLaundry">
         <activity
-            android:name=".DaftarHarga.ListPriceActivity"
+            android:name=".DaftarHarga.DaftarHargaActivity"
             android:exported="true" />
         <activity
             android:name=".SplashScreenLaundry"
             android:exported="true" />
         <activity
-            android:name=".History.HistoryActivity"
+            android:name=".Riwayat.RiwayatActivity"
             android:exported="true" />
         <activity
             android:name=".Laundry.LaundryActivity"

@@ -21,8 +21,18 @@
             android:gravity="center"
             android:orientation="horizontal"
             android:padding="15dp">
+            <TextView
+                android:id="@+id/id_DH"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Kaos"
+                android:visibility="gone"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textStyle="bold" />
 
             <ImageView
+                android:id="@+id/gambarItem_DH"
                 android:layout_width="0dp"
                 android:layout_height="70dp"
                 android:layout_marginEnd="20dp"
@@ -37,7 +47,7 @@
                 android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/txtBarang"
+                    android:id="@+id/txtNamaBarang_DH"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Kaos"
@@ -46,7 +56,17 @@
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/txtHarga"
+                    android:id="@+id/txtJenisItem_DH"
+                    android:visibility="gone"
+                    android:layout_marginTop="25dp"
+                    android:textStyle="bold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Rp 12.000"
+                    android:textColor="@color/black" />
+
+                <TextView
+                    android:id="@+id/txtHargaItem_DH"
                     android:layout_marginTop="25dp"
                     android:textStyle="bold"
                     android:layout_width="wrap_content"
