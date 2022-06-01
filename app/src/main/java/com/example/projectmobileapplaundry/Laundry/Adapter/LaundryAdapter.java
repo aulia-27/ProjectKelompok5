@@ -12,12 +12,11 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.example.projectmobileapplaundry.Laundry.Model.LaundryModel;
-import com.example.projectmobileapplaundry.MainActivity.Adapter.MainAdapterRiwayatLaundry;
 import com.example.projectmobileapplaundry.R;
 
 import java.util.List;
 
-public class LaundryAdapter extends RecyclerView.Adapter<LaundryAdapter.MainViewHolder> {
+public class LaundryAdapter extends RecyclerView.Adapter<LaundryAdapter.LaundryViewHolder> {
 
     Context context;
     private List<LaundryModel> laundryModels;
@@ -28,14 +27,14 @@ public class LaundryAdapter extends RecyclerView.Adapter<LaundryAdapter.MainView
 
     @NonNull
     @Override
-    public MainViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public LaundryViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.layout_list_laundry, parent, false);
-        MainViewHolder mainViewHolder = new MainViewHolder(view);
-        return mainViewHolder;
+        LaundryViewHolder laundryViewHolder = new LaundryViewHolder(view);
+        return laundryViewHolder;
     }
 
     @Override
-    public void onBindViewHolder(@NonNull MainViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull LaundryViewHolder holder, int position) {
         LaundryModel laundryModel = laundryModels.get(position);
 //        holder.id.setText(String.valueOf(userModel.getId()));
         Glide.with(context).load(laundryModel.getGambarItem()).into(holder.gambarItem);
@@ -48,11 +47,11 @@ public class LaundryAdapter extends RecyclerView.Adapter<LaundryAdapter.MainView
         return laundryModels.size();
     }
 
-    public static class MainViewHolder extends RecyclerView.ViewHolder  {
+    public static class LaundryViewHolder extends RecyclerView.ViewHolder  {
         TextView txtIdItem, txtNamaItem, txtHargaItem, txtJumlahItem;
         ImageView gambarItem;
 
-        public MainViewHolder(@NonNull View itemView) {
+        public LaundryViewHolder(@NonNull View itemView) {
             super(itemView);
             txtIdItem = itemView.findViewById(R.id.id_L);
             txtNamaItem = itemView.findViewById(R.id.txtNamaBarang_L);

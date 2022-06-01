@@ -15,7 +15,7 @@ import com.example.projectmobileapplaundry.MainActivity.Model.ProsesLaundryModel
 
 import java.util.List;
 
-public class MainAdapterProsesLaundry extends RecyclerView.Adapter<MainAdapterProsesLaundry.MainViewHolder> {
+public class MainAdapterProsesLaundry extends RecyclerView.Adapter<MainAdapterProsesLaundry.MainProsesLaundryViewHolder> {
     Context context;
     private List<ProsesLaundryModel> mProsesLaundries;
     GridLayoutManager gridLayoutManager;
@@ -27,13 +27,13 @@ public class MainAdapterProsesLaundry extends RecyclerView.Adapter<MainAdapterPr
 
     @NonNull
     @Override
-    public MainViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.layout_list_proses_laundry, parent, false);
-        return new MainViewHolder(view);
+    public MainProsesLaundryViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.layout_list_proses_laundry_empty, parent, false);
+        return new MainProsesLaundryViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull MainViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull MainProsesLaundryViewHolder holder, int position) {
         ProsesLaundryModel prosesLaundryModel = mProsesLaundries.get(position);
         holder.txtAntrianProses.setText(""+ prosesLaundryModel.getKode_antrian());
         holder.txtAntrianProses.setText(""+ prosesLaundryModel.getKode_antrian());
@@ -49,9 +49,9 @@ public class MainAdapterProsesLaundry extends RecyclerView.Adapter<MainAdapterPr
         return mProsesLaundries.size();
     }
 
-    public static class MainViewHolder extends RecyclerView.ViewHolder {
+    public static class MainProsesLaundryViewHolder extends RecyclerView.ViewHolder {
         TextView txtId_PL, txtId_User_PL, txtAntrianProses, txtTanggalProses, txtItemProses, txtProses, txtHargaProses;
-        public MainViewHolder(@NonNull View itemView) {
+        public MainProsesLaundryViewHolder(@NonNull View itemView) {
             super(itemView);
             txtId_PL = itemView.findViewById(R.id.id_PL);
             txtId_User_PL = itemView.findViewById(R.id.id_user_PL);

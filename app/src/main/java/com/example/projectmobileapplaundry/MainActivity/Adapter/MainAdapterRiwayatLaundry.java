@@ -15,7 +15,7 @@ import com.example.projectmobileapplaundry.MainActivity.Model.RiwayatLaundryMode
 
 import java.util.List;
 
-public class MainAdapterRiwayatLaundry extends RecyclerView.Adapter<MainAdapterRiwayatLaundry.MainViewHolder> {
+public class MainAdapterRiwayatLaundry extends RecyclerView.Adapter<MainAdapterRiwayatLaundry.MainRiwayatLaundryViewHolder> {
 
     Context context;
     private List<RiwayatLaundryModel> mRiwayatLaundries;
@@ -28,14 +28,14 @@ public class MainAdapterRiwayatLaundry extends RecyclerView.Adapter<MainAdapterR
 
     @NonNull
     @Override
-    public MainViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.layout_list_riwayat_laundry,parent,false);
-        MainViewHolder mainViewHolder = new MainViewHolder(view);
-        return mainViewHolder;
+    public MainRiwayatLaundryViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.layout_list_riwayat_laundry_empty,parent,false);
+        MainRiwayatLaundryViewHolder mainRiwayatLaundryViewHolder = new MainRiwayatLaundryViewHolder(view);
+        return mainRiwayatLaundryViewHolder;
     }
 
     @Override
-    public void onBindViewHolder(@NonNull MainViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull MainRiwayatLaundryViewHolder holder, int position) {
         RiwayatLaundryModel riwayatLaundryModel = mRiwayatLaundries.get(position);
         holder.txtId_rl.setText(""+riwayatLaundryModel.getId());
         holder.txtAntrianRiwayat.setText(""+ riwayatLaundryModel.getId());
@@ -49,9 +49,9 @@ public class MainAdapterRiwayatLaundry extends RecyclerView.Adapter<MainAdapterR
         return mRiwayatLaundries.size();
     }
 
-    public static class MainViewHolder extends RecyclerView.ViewHolder {
+    public static class MainRiwayatLaundryViewHolder extends RecyclerView.ViewHolder {
         TextView txtId_rl, txtAntrianRiwayat, txtTanggalRiwayat, txtItemRiwayat, txtHargaRiwayat, txtStatusRiwayat;
-        public MainViewHolder(@NonNull View itemView) {
+        public MainRiwayatLaundryViewHolder(@NonNull View itemView) {
             super(itemView);
             txtId_rl = itemView.findViewById(R.id.id_PL);
             txtAntrianRiwayat = itemView.findViewById(R.id.txtAntrian_RL);
