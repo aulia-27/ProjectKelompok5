@@ -51,7 +51,7 @@ public class DaftarHargaActivity extends AppCompatActivity {
     }
 
     private void showData() {
-        SERVERAPI.getSelectDaftarHargaAPI().callProduk().enqueue(new Callback<List<DaftarHargaModel>>() {
+        SERVERAPI.getSelectDaftarHargaAPI().callDaftarHarga().enqueue(new Callback<List<DaftarHargaModel>>() {
             @Override
             public void onResponse(Call<List<DaftarHargaModel>> call, Response<List<DaftarHargaModel>> response) {
                 if (response.isSuccessful() && response.body() != null){

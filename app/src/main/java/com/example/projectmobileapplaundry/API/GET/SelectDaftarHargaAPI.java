@@ -9,6 +9,6 @@ import retrofit2.Call;
 import retrofit2.http.GET;
 
 public interface SelectDaftarHargaAPI {
-    @GET("selectdaftarharga.php.php")
-    Call<List<DaftarHargaModel>> callProduk();
+    @GET("selectdaftarharga.php")
+    Call<List<DaftarHargaModel>> callDaftarHarga();
 }

@@ -1,164 +1,164 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".Login.RegisterActivity">
-
 
     <TextView
         android:id="@+id/txtRegister"
+        android:layout_gravity="center"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="60dp"
         android:text="Register App Laundry"
         android:textColor="@color/black"
         android:textSize="24sp"
         android:textStyle="bold" />
 
-    <TextView
-        android:id="@+id/txtNamaDepan"
-        android:layout_width="wrap_content"
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/txtRegister"
-        android:layout_marginLeft="15dp"
-        android:layout_marginTop="30dp"
-        android:text="Nama Depan"
-        android:textColor="@color/black"
-        android:textSize="16dp"
-        android:textStyle="bold" />
+        android:padding="5dp"
+        app:boxBackgroundMode="outline"
+        app:boxBackgroundColor="@color/white"
+        android:layout_marginTop="30dp">
+        <EditText
+            android:id="@+id/editNama"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:hint="Nama"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="5dp"
+            android:textColor="@color/black"
+            android:textStyle="bold" />
+    </com.google.android.material.textfield.TextInputLayout>
 
-    <EditText
-        android:id="@+id/editNamaDepan"
-        android:layout_width="400dp"
-        android:layout_height="45dp"
-        android:layout_below="@id/txtNamaDepan"
-        android:layout_centerHorizontal="true"
-        android:layout_marginLeft="5dp"
-        android:textColor="@color/black"
-        android:textStyle="bold" />
+<!--    <com.google.android.material.textfield.TextInputLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:padding="5dp"-->
+<!--        app:boxBackgroundMode="outline"-->
+<!--        app:boxBackgroundColor="@color/white"-->
+<!--        android:layout_marginTop="5dp">-->
+<!--        <EditText-->
+<!--            android:id="@+id/editUsernameRegister"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="55dp"-->
+<!--            android:hint="Username"-->
+<!--            android:layout_centerHorizontal="true"-->
+<!--            android:layout_marginLeft="5dp"-->
+<!--            android:textColor="@color/black"-->
+<!--            android:textStyle="bold" />-->
+<!--    </com.google.android.material.textfield.TextInputLayout>-->
 
-    <TextView
-        android:id="@+id/txtNamaBelakang"
-        android:layout_width="wrap_content"
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/editNamaDepan"
-        android:layout_marginLeft="15dp"
-        android:layout_marginTop="15dp"
-        android:text="Nama Belakang"
-        android:textColor="@color/black"
-        android:textSize="16dp"
-        android:textStyle="bold" />
+        android:padding="5dp"
+        app:boxBackgroundMode="outline"
+        app:boxBackgroundColor="@color/white"
+        android:layout_marginTop="5dp">
+        <EditText
+            android:id="@+id/editEmailRegister"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:hint="Email"
+            android:inputType="textEmailAddress"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="5dp"
+            android:textColor="@color/black"
+            android:textStyle="bold" />
+    </com.google.android.material.textfield.TextInputLayout>
 
-    <EditText
-        android:id="@+id/editNamaBelakang"
-        android:layout_width="400dp"
-        android:layout_height="45dp"
-        android:layout_below="@id/txtNamaBelakang"
-        android:layout_centerHorizontal="true"
-        android:layout_marginLeft="5dp"
-        android:textColor="@color/black"
-        android:textStyle="bold" />
-
-    <TextView
-        android:id="@+id/txtUsername"
-        android:layout_width="wrap_content"
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/editNamaBelakang"
-        android:layout_marginLeft="15dp"
-        android:layout_marginTop="15dp"
-        android:text="Username"
-        android:textColor="@color/black"
-        android:textSize="16dp"
-        android:textStyle="bold" />
+        android:padding="5dp"
+        app:boxBackgroundMode="outline"
+        app:boxBackgroundColor="@color/white"
+        android:layout_marginTop="5dp">
+        <EditText
+            android:id="@+id/editHpRegister"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:hint="No Handphone"
+            android:inputType="number"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="5dp"
+            android:textColor="@color/black"
+            android:textStyle="bold" />
+    </com.google.android.material.textfield.TextInputLayout>
 
-    <EditText
-        android:id="@+id/editUsername"
-        android:layout_width="400dp"
-        android:layout_height="45dp"
-        android:layout_below="@id/txtUsername"
-        android:layout_centerHorizontal="true"
-        android:layout_marginLeft="5dp"
-        android:textColor="@color/black"
-        android:textStyle="bold" />
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_marginTop="10dp"
+        android:padding="5dp"
+        app:boxBackgroundMode="outline"
+        app:boxBackgroundColor="@color/white"
+        app:passwordToggleEnabled="true"
+        android:layout_height="wrap_content">
 
-    <TextView
-        android:id="@+id/txtEmail"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/editUsername"
-        android:layout_marginLeft="15dp"
-        android:layout_marginTop="15dp"
-        android:text="Email"
-        android:textColor="@color/black"
-        android:textSize="16dp"
-        android:textStyle="bold" />
+        <EditText
+            android:id="@+id/editPasswordRegister"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:hint="Password"
+            android:inputType="textPassword"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="5dp"
+            android:textColor="@color/black"
+            android:textStyle="bold"/>
 
-    <EditText
-        android:id="@+id/editEmail"
-        android:layout_width="400dp"
-        android:layout_height="45dp"
-        android:layout_below="@id/txtEmail"
-        android:layout_centerHorizontal="true"
-        android:layout_marginLeft="5dp"
-        android:textColor="@color/black"
-        android:textStyle="bold" />
+    </com.google.android.material.textfield.TextInputLayout>
 
-    <TextView
-        android:id="@+id/txtPassword"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/editEmail"
-        android:layout_marginLeft="15dp"
-        android:layout_marginTop="15dp"
-        android:text="Password"
-        android:textColor="@color/black"
-        android:textSize="16dp"
-        android:textStyle="bold" />
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_marginTop="10dp"
+        android:padding="5dp"
+        app:boxBackgroundMode="outline"
+        app:boxBackgroundColor="@color/white"
+        app:passwordToggleEnabled="true"
+        android:layout_height="wrap_content">
 
-    <EditText
-        android:id="@+id/editPassword"
-        android:layout_width="400dp"
-        android:layout_height="45dp"
-        android:layout_below="@id/txtPassword"
-        android:layout_centerHorizontal="true"
-        android:layout_marginLeft="5dp"
-        android:textColor="@color/black"
-        android:textStyle="bold" />
+        <EditText
+            android:id="@+id/editRePasswordRegister"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:hint="Re-Password"
+            android:inputType="textPassword"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="5dp"
+            android:textColor="@color/black"
+            android:textStyle="bold"/>
 
-    <TextView
-        android:id="@+id/txtRePassword"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/editPassword"
-        android:layout_marginLeft="15dp"
-        android:layout_marginTop="15dp"
-        android:text="Re-Password"
-        android:textColor="@color/black"
-        android:textSize="16dp"
-        android:textStyle="bold" />
+    </com.google.android.material.textfield.TextInputLayout>
 
-    <EditText
-        android:id="@+id/editRePassword"
-        android:layout_width="400dp"
-        android:layout_height="45dp"
-        android:layout_below="@id/txtRePassword"
-        android:layout_centerHorizontal="true"
-        android:layout_marginLeft="5dp"
-        android:textColor="@color/black"
-        android:textStyle="bold" />
 
     <Button
-        android:id="@+id/btnLogin"
+        android:id="@+id/btnRegisterUpload"
         android:textStyle="bold"
         android:textColor="@color/white"
-        android:text="Login"
+        android:text="Register"
+        android:backgroundTint="#4CAF50"
+        android:layout_gravity="center"
         android:layout_centerHorizontal="true"
-        android:layout_below="@id/editRePassword"
         android:layout_marginTop="20dp"
         android:layout_width="300dp"
         android:layout_height="wrap_content"/>
 
-</RelativeLayout>
+    <Button
+        android:id="@+id/btnBackLogin"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:text="Login"
+        android:layout_gravity="center"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"/>
+
+</LinearLayout>

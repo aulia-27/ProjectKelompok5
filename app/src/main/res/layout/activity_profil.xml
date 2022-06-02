@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Profil.ProfilActivity">
+
+    <ScrollView
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="1dp"
+        tools:ignore="MissingConstraints">
+
+        <TextView
+            android:id="@+id/txtProfil"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="30dp"
+            android:text="Profil"
+            android:textColor="@color/black"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/imgIcon"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/txtSelamatDtg"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_baseline_supervised_user_circle_24"
+            android:layout_marginTop="50dp"
+            android:layout_width="100dp"
+            android:layout_height="100dp"/>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            app:boxBackgroundMode="outline"
+            app:boxBackgroundColor="@color/white"
+            android:layout_marginTop="50dp">
+            <EditText
+                android:id="@+id/editNamaProfil"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:hint="Nama"
+                android:layout_centerHorizontal="true"
+                android:layout_marginLeft="5dp"
+                android:textColor="@color/black"
+                android:textStyle="bold" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            app:boxBackgroundMode="outline"
+            app:boxBackgroundColor="@color/white"
+            android:layout_marginTop="3dp">
+            <EditText
+                android:id="@+id/editEmailProfil"
+                android:editable="false"
+                android:inputType="textEmailAddress"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:hint="Email"
+                android:layout_centerHorizontal="true"
+                android:layout_marginLeft="5dp"
+                android:textColor="@color/black"
+                android:textStyle="bold" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            app:boxBackgroundMode="outline"
+            app:boxBackgroundColor="@color/white"
+            android:layout_marginTop="3dp">
+            <EditText
+                android:id="@+id/editNoHp"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:hint="No. Handphone"
+                android:layout_centerHorizontal="true"
+                android:layout_marginLeft="5dp"
+                android:textColor="@color/black"
+                android:textStyle="bold" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            app:boxBackgroundMode="outline"
+            app:boxBackgroundColor="@color/white"
+            android:layout_marginTop="3dp">
+            <EditText
+                android:id="@+id/editAlamat"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:inputType="text"
+                android:hint="Alamat"
+                android:layout_centerHorizontal="true"
+                android:layout_marginLeft="5dp"
+                android:textColor="@color/black"
+                android:textStyle="bold" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/btnEdit"
+            android:layout_width="130dp"
+            android:height="55dp"
+            android:backgroundTint="#3F51B5"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:padding="5dp"
+            android:text="Edit"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/btnLogOut"
+            android:layout_width="130dp"
+            android:height="55dp"
+            android:backgroundTint="#D5173D"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:padding="5dp"
+            android:text="Logout"
+            android:textStyle="bold" />
+
+
+    </LinearLayout>
+
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>
