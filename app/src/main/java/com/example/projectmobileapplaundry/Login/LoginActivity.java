@@ -32,6 +32,7 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         layoutLogin();
+        onBackPressed();
     }
 
     private void layoutLogin() {
@@ -48,9 +49,11 @@ public class LoginActivity extends AppCompatActivity {
         progresDialog.setMessage("Silakan  Tunggu");
         progresDialog.setCancelable(false);
 
-        btnLogin.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+        btnLogin.setOnClickListener(view -> {
+            if (editEmail.getText().length()> 0 && editPassword.getText().length()>0){
+                login(editEmail.getText().toString(), editPassword.getText().toString());
+            } else {
+                Toast.makeText(getApplicationContext(), "Silakan Isi Username dan Password", Toast.LENGTH_LONG).show();
 
             }
         });
@@ -62,21 +65,22 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
-        txtLupaKataSanti.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (editEmail. getText().length()> 0 && editPassword.getText().length()>0){
-                    login(editEmail.getText().toString(), editPassword.getText().toString());
-                } else {
-                    Toast.makeText(getApplicationContext(), "Silakan Isi Username dan Password", Toast.LENGTH_LONG).show();
+        Intent intent = new Intent(this, LoginActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        finish();
+        startActivity(intent);
+    }
 
-                }
-            }
-        });
-
+    public void onBackPressed() {
+        Intent intent = new Intent(Intent.ACTION_MAIN);
+        intent.addCategory(Intent.CATEGORY_HOME);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(intent);
+        super.onBackPressed();
     }
 
     private void login (String email,String password) {
+        progresDialog.show();
         mAuth.signInWithEmailAndPassword(email, password). addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
@@ -89,6 +93,7 @@ public class LoginActivity extends AppCompatActivity {
                 } else {
                     Toast.makeText(getApplicationContext(), "Login Gagal !", Toast.LENGTH_LONG).show();
                 }
+                progresDialog.dismiss();
             }
         });
     }

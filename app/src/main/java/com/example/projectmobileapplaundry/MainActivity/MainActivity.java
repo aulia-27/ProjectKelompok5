@@ -13,6 +13,9 @@ import android.widget.TextView;
 
 import com.example.projectmobileapplaundry.DaftarHarga.DaftarHargaActivity;
 import com.example.projectmobileapplaundry.Laundry.LaundryActivity;
+import com.example.projectmobileapplaundry.Login.LoginActivity;
+import com.example.projectmobileapplaundry.MainActivity.Adapter.MainAdapterProsesLaundry;
+import com.example.projectmobileapplaundry.MainActivity.Adapter.MainAdapterRiwayatLaundry;
 import com.example.projectmobileapplaundry.Profil.ProfilActivity;
 import com.example.projectmobileapplaundry.R;
 import com.example.projectmobileapplaundry.MainActivity.Model.ProsesLaundryModel;
@@ -55,6 +58,11 @@ public class MainActivity extends AppCompatActivity {
             txtNama.setText("Anonymous");
         }
 
+        Intent intent = new Intent(MainActivity.this,
+                LoginActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        startActivity(intent);
+//
 //        rvProsesLaundry = findViewById(R.id.rvProsesLaundry);
 //        rvRiwayatLaundry = findViewById(R.id.rvRiwayatLaundry);
 //
@@ -66,7 +74,7 @@ public class MainActivity extends AppCompatActivity {
 //        mainAdapterRL = new MainAdapterRiwayatLaundry(this, modelRiwayatLaundries);
 //        rvRiwayatLaundry.setAdapter(mainAdapterPL);
 //        glmRiwayatLaundry = new GridLayoutManager(this, 4, RecyclerView.VERTICAL, false);
-
+//        rvRiwayatLaundry.setLayoutManager(glmProsesLaundry);
     }
 
     private void setMenu() {

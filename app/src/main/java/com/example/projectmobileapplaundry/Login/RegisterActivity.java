@@ -62,7 +62,7 @@ public class RegisterActivity extends AppCompatActivity {
                     && editPasswordRegister.getText().toString().length() > 0
                     && editRePasswordRegister.getText().toString().length() > 0) {
                 if (editPasswordRegister.getText().toString().equals(editRePasswordRegister.getText().toString())){
-                    if (editPasswordRegister.getText().toString().length() > 8 && editRePasswordRegister.getText().toString().length() > 8) {
+                    if (editPasswordRegister.getText().toString().length() > 5 && editRePasswordRegister.getText().toString().length() > 5) {
                         register(
                                 editNama.getText().toString(),
                                 editEmailRegister.getText().toString(),
@@ -70,7 +70,7 @@ public class RegisterActivity extends AppCompatActivity {
                                 editPasswordRegister.getText().toString()
                         );
                     } else {
-                        Toast.makeText(getApplicationContext(), "Silakan Masukan Password Minimal  8 Kata!", Toast.LENGTH_LONG).show();
+                        Toast.makeText(getApplicationContext(), "Silakan Masukan Password Minimal  6 Kata!", Toast.LENGTH_LONG).show();
                     }
                 } else {
                     Toast.makeText(getApplicationContext(), "Silakan Masukan Password Yang Sama!", Toast.LENGTH_LONG).show();
@@ -107,6 +107,7 @@ public class RegisterActivity extends AppCompatActivity {
                 } else {
                     Toast.makeText(getApplicationContext(), task.getException().getLocalizedMessage(), Toast.LENGTH_LONG).show();
                 }
+                progresDialog.dismiss();
             }
         });
     }
