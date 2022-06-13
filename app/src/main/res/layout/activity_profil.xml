@@ -13,6 +13,7 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         tools:context=".Profil.ProfilActivity">
+
         <TextView
             android:id="@+id/txtProfil"
             android:layout_width="wrap_content"
@@ -27,7 +28,6 @@
         <ImageView
             android:id="@+id/imgIcon"
             android:layout_centerHorizontal="true"
-            android:layout_below="@id/txtSelamatDtg"
             android:layout_gravity="center"
             android:src="@drawable/ic_baseline_supervised_user_circle_24"
             android:layout_marginTop="50dp"
@@ -132,5 +132,7 @@
             android:text="Logout"
             android:textStyle="bold" />
 
-    </LinearLayout>
-</ScrollView>
+
+
+</LinearLayout>
+    </ScrollView>

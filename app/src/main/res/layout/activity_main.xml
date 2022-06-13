@@ -6,225 +6,290 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity.MainActivity">
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
 
     <TextView
-        android:id="@+id/txtSelamat"
+        android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="15dp"
-        android:layout_marginTop="25dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginBottom="16dp"
         android:text="Selamat Datang"
         android:textColor="@color/black"
-        android:textSize="18sp"
-        android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/txtUser"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/txtSelamat"
-            android:layout_marginLeft="15dp"
-            android:layout_marginTop="10dp"
-            android:text="USER"
-            android:textColor="@color/black"
-            android:textSize="12sp"
-            android:textStyle="bold" />
-
-        <ImageView
-            android:id="@+id/imgUser"
-            android:layout_width="65dp"
-            android:layout_height="65dp"
-            android:layout_marginLeft="180dp"
-            android:layout_marginTop="25dp"
-            android:layout_toRightOf="@id/txtSelamat"
-            android:src="@drawable/ic_baseline_supervised_user_circle_24" />
+        android:textSize="20sp"
+        android:textStyle="normal|bold"
+        app:layout_constraintBottom_toTopOf="@+id/txtUser"
+        app:layout_constraintStart_toEndOf="@+id/imgUser"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/txtKategori"
+        android:id="@+id/txtUser"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/txtUser"
-        android:layout_marginLeft="15dp"
-        android:layout_marginTop="50dp"
+        android:layout_height="21dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="263dp"
+        android:text="User"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imgUser"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <ImageView
+        android:id="@+id/imgUser"
+        android:layout_width="76dp"
+        android:layout_height="73dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        app:layout_constraintBottom_toTopOf="@+id/textView4"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_baseline_supervised_user_circle_24" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="19dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="342dp"
         android:text="Kategori"
         android:textColor="@color/black"
-        android:textSize="18sp"
-        android:textStyle="bold" />
-
-    <RelativeLayout
-        android:id="@+id/rlLaundry"
-        android:layout_width="90dp"
-        android:layout_height="110dp"
-        android:layout_below="@id/txtKategori"
-        android:layout_marginLeft="13dp"
-        android:layout_marginTop="10dp"
-        android:background="#73E8E8E8">
-
-        <ImageView
-            android:id="@+id/imgLaundry"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:layout_marginStart="5dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginEnd="5dp"
-            android:layout_marginBottom="5dp"
-            android:src="@drawable/laundry" />
-
-        <TextView
-            android:id="@+id/txtLaundry"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/imgLaundry"
-            android:layout_centerHorizontal="true"
-            android:text="Laundry"
-            android:textColor="@color/black"
-            android:textSize="10sp"
-            android:textStyle="bold" />
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:id="@+id/rlDaftarHarga"
-        android:layout_width="90dp"
-        android:layout_height="110dp"
-        android:layout_below="@id/txtKategori"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="10dp"
-        android:layout_toRightOf="@id/rlLaundry"
-        android:background="#73E8E8E8">
-
-        <ImageView
-            android:id="@+id/imgDaftarHarga"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:layout_marginStart="5dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginEnd="5dp"
-            android:layout_marginBottom="5dp"
-            android:src="@drawable/clipboard" />
-
-        <TextView
-            android:id="@+id/txtDaftarHarga"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/imgDaftarHarga"
-            android:layout_centerHorizontal="true"
-            android:text="Daftar Harga"
-            android:textColor="@color/black"
-            android:textSize="10sp"
-            android:textStyle="bold" />
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:id="@+id/rlHistory"
-        android:layout_width="90dp"
-        android:layout_height="110dp"
-        android:layout_below="@id/txtKategori"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="10dp"
-        android:layout_toRightOf="@id/rlDaftarHarga"
-        android:background="#73E8E8E8">
-
-        <ImageView
-            android:id="@+id/imgHistory"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:layout_marginStart="5dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginEnd="5dp"
-            android:layout_marginBottom="5dp"
-            android:src="@drawable/refresh" />
-
-        <TextView
-            android:id="@+id/txtHistory"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/imgHistory"
-            android:layout_centerHorizontal="true"
-            android:text="Riwayat"
-            android:textColor="@color/black"
-            android:textSize="10sp"
-            android:textStyle="bold" />
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:id="@+id/rlMore"
-        android:layout_width="90dp"
-        android:layout_height="110dp"
-        android:layout_below="@id/txtKategori"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="10dp"
-        android:layout_toRightOf="@id/rlHistory"
-        android:background="#73E8E8E8">
-
-        <ImageView
-            android:id="@+id/imgMore"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:layout_marginStart="5dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginEnd="5dp"
-            android:layout_marginBottom="5dp"
-            android:src="@drawable/ellipsis" />
-
-        <TextView
-            android:id="@+id/txtMore"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/imgMore"
-            android:layout_centerHorizontal="true"
-            android:text="Lainnya"
-            android:textColor="@color/black"
-            android:textSize="10sp"
-            android:textStyle="bold" />
-    </RelativeLayout>
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgUser" />
 
     <TextView
-        android:id="@+id/txtProsesLaundry"
-        android:textColor="@color/black"
-        android:textStyle="bold"
-        android:text="Proses Laundry"
-        android:layout_below="@id/rlMore"
-        android:layout_marginLeft="13dp"
-        android:layout_margin="10dp"
+        android:id="@+id/textView5"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        android:layout_height="20dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="338dp"
+        android:text="Proses Laundry"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/llMenuLaundry" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvProsesLaundry"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/txtProsesLaundry"
-        android:layout_marginStart="5dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginEnd="5dp"
-        android:layout_marginBottom="5dp" />
+        android:layout_width="0dp"
+        android:layout_height="160dp"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="14dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView5"
+
+
+
+        >
+
+    </androidx.recyclerview.widget.RecyclerView>
 
     <TextView
-        android:id="@+id/txtRiwayatLaundry"
-        android:textColor="@color/black"
-        android:textStyle="bold"
-        android:text="Riwayat Laundry"
-        android:layout_below="@id/rvProsesLaundry"
-        android:layout_marginLeft="13dp"
-        android:layout_margin="10dp"
+        android:id="@+id/textView6"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="341dp"
+        android:text="Riwayat Laundry"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rvProsesLaundry" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvRiwayatLaundry"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
+        android:layout_height="160dp"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="14dp"
+        android:layout_marginBottom="164dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView6" >
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+    <TextView
+        android:id="@+id/txtSemuaProsesLaundry"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/txtRiwayatLaundry"
-        android:layout_marginStart="5dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginEnd="5dp"
-        android:layout_marginBottom="5dp" />
+        android:layout_marginStart="189dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="8dp"
+        android:text="Lihat Semua"
+        android:textColor="#225993"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/rvProsesLaundry"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/textView5" />
 
-    </RelativeLayout>
+    <TextView
+        android:id="@+id/txtSemuaRiwayat"
+        android:layout_width="wrap_content"
+        android:layout_height="19dp"
+        android:layout_marginStart="185dp"
+        android:layout_marginTop="11dp"
+        android:layout_marginEnd="14dp"
+        android:layout_marginBottom="11dp"
+        android:text="Lihat Semua"
+        android:textColor="#225993"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/rvRiwayatLaundry"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textView6"
+        app:layout_constraintTop_toBottomOf="@+id/rvProsesLaundry" />
 
+    <LinearLayout
+        android:id="@+id/llMenuLaundry"
+        android:layout_width="110dp"
+        android:layout_height="110dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="4dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toStartOf="@+id/llMenuRiwayat"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView4">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/imageView3"
+                android:layout_width="75dp"
+                android:layout_height="70dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="7dp"
+                android:layout_marginEnd="18dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/laundry" />
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="76dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="14dp"
+                android:layout_marginTop="7dp"
+                android:layout_marginEnd="18dp"
+                android:text="Laundry"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageView3" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/llMenuRiwayat"
+        android:layout_width="110dp"
+        android:layout_height="110dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintEnd_toStartOf="@+id/llMenuProses"
+        app:layout_constraintStart_toEndOf="@+id/llMenuLaundry"
+        app:layout_constraintTop_toBottomOf="@+id/textView4">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/imageView5"
+                android:layout_width="75dp"
+                android:layout_height="70dp"
+                android:layout_marginStart="18dp"
+                android:layout_marginTop="7dp"
+                android:layout_marginEnd="17dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/refresh" />
+
+            <TextView
+                android:id="@+id/textView9"
+                android:layout_width="76dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="18dp"
+                android:text="Riwayat"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageView5" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/llMenuProses"
+        android:layout_width="110dp"
+        android:layout_height="110dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="16dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/llMenuRiwayat"
+        app:layout_constraintTop_toBottomOf="@+id/textView4">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/imageView6"
+                android:layout_width="75dp"
+                android:layout_height="70dp"
+                android:layout_marginStart="18dp"
+                android:layout_marginTop="7dp"
+                android:layout_marginEnd="17dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/clipboard" />
+
+            <TextView
+                android:id="@+id/textView10"
+                android:layout_width="76dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="18dp"
+                android:layout_marginTop="7dp"
+                android:layout_marginEnd="16dp"
+                android:text="Proses"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageView6" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

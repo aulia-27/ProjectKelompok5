@@ -31,7 +31,7 @@ public class ProfilActivity extends AppCompatActivity {
         editNamaProfil = findViewById(R.id.editNamaProfil);
         editNoHP = findViewById(R.id.editNoHp);
         editAlamat = findViewById(R.id.editAlamat);
-        editEmailRegiter = findViewById(R.id.editEmailRegister);
+        editEmailRegiter = findViewById(R.id.editEmailProfil);
 
         if (firebaseUser !=  null){
             editNamaProfil.setText(firebaseUser.getDisplayName());

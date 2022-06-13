@@ -1,238 +1,100 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Laundry.LaundryActivity">
 
-    <TextView
-        android:id="@+id/txtOrderLaundry"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        android:textColor="@color/black"
-        android:text="Order Laundry"
-        android:layout_marginTop="20dp"
-        android:layout_marginLeft="15dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
 
     <TextView
-        android:id="@+id/txtKategori"
+        android:id="@+id/textView7"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/txtOrderLaundry"
-        android:layout_marginLeft="15dp"
-        android:layout_marginTop="20dp"
-        android:text="Kategori"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="27dp"
+        android:layout_marginEnd="270dp"
+        android:text="Order Laundry"
         android:textColor="@color/black"
-        android:textSize="16sp"
-        android:textStyle="bold" />
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgBackMenu" />
 
-    <RelativeLayout
-        android:id="@+id/rlSemua"
-        android:layout_width="90dp"
-        android:elevation="8dp"
-        android:layout_height="110dp"
-        android:layout_below="@id/txtKategori"
-        android:layout_marginLeft="6dp"
-        android:layout_marginTop="10dp"
-        android:background="#73E8E8E8">
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="18dp"
+        android:layout_marginEnd="269dp"
+        android:text="Jenis Paket Laundry"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView7" />
 
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="0dp"
+        android:layout_height="80dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
 
-        <ImageView
-            android:id="@+id/imgSemua"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:layout_marginStart="5dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginEnd="5dp"
-            android:layout_marginBottom="5dp"
-            android:src="@drawable/exmaple_all" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-        <TextView
-            android:id="@+id/txtSemua"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/imgSemua"
-            android:layout_centerHorizontal="true"
-            android:text="Semuanya"
-            android:textColor="@color/black"
-            android:textSize="10sp"
-            android:textStyle="bold" />
-    </RelativeLayout>
+            <Button
+                android:id="@+id/btnPesanLaundry"
+                android:layout_width="330dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="53dp"
+                android:layout_marginEnd="53dp"
+                android:layout_marginBottom="16dp"
+                android:text="Pesan Laundry"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
 
-    <RelativeLayout
-        android:id="@+id/rlBaju"
-        android:layout_width="90dp"
-        android:layout_height="110dp"
-        android:layout_below="@id/txtKategori"
-        android:layout_toRightOf="@id/rlSemua"
-        android:layout_marginLeft="13dp"
-        android:layout_marginTop="10dp"
-        android:background="#73E8E8E8">
-
-        <ImageView
-            android:id="@+id/imgBaju"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:layout_marginStart="5dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginEnd="5dp"
-            android:layout_marginBottom="5dp"
-            android:src="@drawable/shirt" />
-
-        <TextView
-            android:id="@+id/txtBaju"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/imgBaju"
-            android:layout_centerHorizontal="true"
-            android:text="Semuanya"
-            android:textColor="@color/black"
-            android:textSize="10sp"
-            android:textStyle="bold" />
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:id="@+id/rlCelana"
-        android:layout_width="90dp"
-        android:layout_height="110dp"
-        android:layout_toRightOf="@id/rlBaju"
-        android:layout_below="@id/txtKategori"
-        android:layout_marginLeft="13dp"
-        android:layout_marginTop="10dp"
-        android:background="#73E8E8E8">
-
-        <ImageView
-            android:id="@+id/imgCelana"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:layout_marginStart="5dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginEnd="5dp"
-            android:layout_marginBottom="5dp"
-            android:src="@drawable/jeans" />
-
-        <TextView
-            android:id="@+id/txtCelana"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/imgCelana"
-            android:layout_centerHorizontal="true"
-            android:text="Semuanya"
-            android:textColor="@color/black"
-            android:textSize="10sp"
-            android:textStyle="bold" />
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:id="@+id/rlLainnya"
-        android:layout_width="90dp"
-        android:layout_height="110dp"
-        android:layout_below="@id/txtKategori"
-        android:layout_marginLeft="13dp"
-        android:layout_marginRight="6dp"
-        android:layout_marginTop="10dp"
-        android:layout_toRightOf="@id/rlCelana"
-        android:background="#73E8E8E8">
-
-        <ImageView
-            android:id="@+id/imgLainnya"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:layout_marginStart="5dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginEnd="5dp"
-            android:layout_marginBottom="5dp"
-            android:src="@drawable/ellipsis" />
-
-        <TextView
-            android:id="@+id/txtLainnya"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/imgLainnya"
-            android:layout_centerHorizontal="true"
-            android:text="Lainnya"
-            android:textColor="@color/black"
-            android:textSize="10sp"
-            android:textStyle="bold" />
-    </RelativeLayout>
-
-
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
 
     <androidx.core.widget.NestedScrollView
-        android:id="@+id/nsvItem"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginBottom="80dp"
-        android:layout_below="@id/rlLainnya">
+        android:layout_width="395dp"
+        android:layout_height="585dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="19dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="14dp"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView8">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rvListLaundry"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="5dp"
-                android:layout_marginTop="5dp"
-                android:layout_marginEnd="5dp"
-                android:layout_marginBottom="5dp" />
-
+            android:orientation="vertical" >
+            <include layout="@layout/layout_list_laundry" />
         </LinearLayout>
-
     </androidx.core.widget.NestedScrollView>
 
-    <RelativeLayout
-        android:id="@+id/rlKeteranganItem"
-        android:layout_below="@id/nsvItem"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
+    <ImageView
+        android:id="@+id/imgBackMenu"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="359dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_baseline_arrow_back_24" />
 
-        <TextView
-            android:id="@+id/txtJmlItem"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:text="Jumlah Item : "
-            android:textColor="@color/black"
-            android:textSize="14sp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/txtHargaTotal"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_marginLeft="150dp"
-            android:layout_marginRight="10dp"
-            android:layout_toRightOf="@id/txtJmlItem"
-            android:text="Daftar Harga : "
-            android:textAlignment="textEnd"
-            android:textColor="@color/black"
-            android:textSize="14sp"
-            android:textStyle="bold" />
-
-    </RelativeLayout>
-
-    <Button
-        android:id="@+id/btnPesanLaundry"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/rlKeteranganItem"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="10dp"
-        android:text="PESAN"
-        android:textColor="@color/white"
-        android:textStyle="bold" />
-
-
-
-</RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

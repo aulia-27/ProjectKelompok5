@@ -14,6 +14,7 @@ import android.widget.Toast;
 
 import com.example.projectmobileapplaundry.MainActivity.MainActivity;
 import com.example.projectmobileapplaundry.R;
+import com.google.android.gms.auth.api.identity.BeginSignInRequest;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -22,7 +23,6 @@ import com.google.firebase.auth.FirebaseUser;
 
 public class LoginActivity extends AppCompatActivity {
     private EditText editEmail, editPassword;
-    private TextView txtLupaKataSanti;
     private Button btnLogin, btnRegister;
     private ProgressDialog progresDialog;
     private FirebaseAuth mAuth;
@@ -32,13 +32,10 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         layoutLogin();
-        onBackPressed();
     }
-
     private void layoutLogin() {
         editEmail = findViewById(R.id.editEmail);
         editPassword = findViewById(R.id.editPassword);
-        txtLupaKataSanti = findViewById(R.id.txtLupaKataSanti);
         btnLogin = findViewById(R.id.btnLogin);
         btnRegister = findViewById(R.id.btnRegister);
 
@@ -54,7 +51,6 @@ public class LoginActivity extends AppCompatActivity {
                 login(editEmail.getText().toString(), editPassword.getText().toString());
             } else {
                 Toast.makeText(getApplicationContext(), "Silakan Isi Username dan Password", Toast.LENGTH_LONG).show();
-
             }
         });
 
@@ -65,10 +61,17 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
-        Intent intent = new Intent(this, LoginActivity.class);
-        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-        finish();
-        startActivity(intent);
+        // Your server's client ID, not your Android client ID.
+        // Only show accounts previously used to sign in.
+        Object signInRequest = BeginSignInRequest.builder()
+                .setGoogleIdTokenRequestOptions(BeginSignInRequest.GoogleIdTokenRequestOptions.builder()
+                        .setSupported(true)
+                        // Your server's client ID, not your Android client ID.
+                        .setServerClientId(getString(R.string.webclientid))
+                        // Only show accounts previously used to sign in.
+                        .setFilterByAuthorizedAccounts(true)
+                        .build())
+                .build();
     }
 
     public void onBackPressed() {

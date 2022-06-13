@@ -3,22 +3,26 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Kuliah/1. Perkuliahan/SMS 6/Praktek Mobile/ProjectMobileAppLaundry/app/src/main/res/layout/activity_history.xml" value="0.25" />
-        <entry key="..\:/Kuliah/1. Perkuliahan/SMS 6/Praktek Mobile/ProjectMobileAppLaundry/app/src/main/res/layout/activity_laundry.xml" value="0.8" />
+        <entry key="..\:/Kuliah/1. Perkuliahan/SMS 6/Praktek Mobile/ProjectMobileAppLaundry/app/src/main/res/drawable/ic_back.xml" value="0.26614583333333336" />
+        <entry key="..\:/Kuliah/1. Perkuliahan/SMS 6/Praktek Mobile/ProjectMobileAppLaundry/app/src/main/res/drawable/ic_baseline_arrow_back_24.xml" value="0.26614583333333336" />
+        <entry key="..\:/Kuliah/1. Perkuliahan/SMS 6/Praktek Mobile/ProjectMobileAppLaundry/app/src/main/res/layout/activity_history.xml" value="0.176" />
+        <entry key="..\:/Kuliah/1. Perkuliahan/SMS 6/Praktek Mobile/ProjectMobileAppLaundry/app/src/main/res/layout/activity_laundry.xml" value="0.176" />
         <entry key="..\:/Kuliah/1. Perkuliahan/SMS 6/Praktek Mobile/ProjectMobileAppLaundry/app/src/main/res/layout/activity_list_price.xml" value="0.1" />
         <entry key="..\:/Kuliah/1. Perkuliahan/SMS 6/Praktek Mobile/ProjectMobileAppLaundry/app/src/main/res/layout/activity_list_price_activiry.xml" value="0.1716485507246377" />
-        <entry key="..\:/Kuliah/1. Perkuliahan/SMS 6/Praktek Mobile/ProjectMobileAppLaundry/app/src/main/res/layout/activity_login.xml" value="0.25" />
-        <entry key="..\:/Kuliah/1. Perkuliahan/SMS 6/Praktek Mobile/ProjectMobileAppLaundry/app/src/main/res/layout/activity_main.xml" value="0.2" />
+        <entry key="..\:/Kuliah/1. Perkuliahan/SMS 6/Praktek Mobile/ProjectMobileAppLaundry/app/src/main/res/layout/activity_login.xml" value="0.136" />
+        <entry key="..\:/Kuliah/1. Perkuliahan/SMS 6/Praktek Mobile/ProjectMobileAppLaundry/app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="..\:/Kuliah/1. Perkuliahan/SMS 6/Praktek Mobile/ProjectMobileAppLaundry/app/src/main/res/layout/activity_profil.xml" value="0.2" />
-        <entry key="..\:/Kuliah/1. Perkuliahan/SMS 6/Praktek Mobile/ProjectMobileAppLaundry/app/src/main/res/layout/activity_register.xml" value="0.25" />
+        <entry key="..\:/Kuliah/1. Perkuliahan/SMS 6/Praktek Mobile/ProjectMobileAppLaundry/app/src/main/res/layout/activity_proses_laundry.xml" value="0.23958333333333334" />
+        <entry key="..\:/Kuliah/1. Perkuliahan/SMS 6/Praktek Mobile/ProjectMobileAppLaundry/app/src/main/res/layout/activity_register.xml" value="0.4" />
+        <entry key="..\:/Kuliah/1. Perkuliahan/SMS 6/Praktek Mobile/ProjectMobileAppLaundry/app/src/main/res/layout/activity_sign_google.xml" value="0.1" />
         <entry key="..\:/Kuliah/1. Perkuliahan/SMS 6/Praktek Mobile/ProjectMobileAppLaundry/app/src/main/res/layout/activity_splash_screen_laundry.xml" value="0.2269021739130435" />
         <entry key="..\:/Kuliah/1. Perkuliahan/SMS 6/Praktek Mobile/ProjectMobileAppLaundry/app/src/main/res/layout/layout_list_harga_laundry.xml" value="0.25" />
-        <entry key="..\:/Kuliah/1. Perkuliahan/SMS 6/Praktek Mobile/ProjectMobileAppLaundry/app/src/main/res/layout/layout_list_laundry.xml" value="0.2359375" />
+        <entry key="..\:/Kuliah/1. Perkuliahan/SMS 6/Praktek Mobile/ProjectMobileAppLaundry/app/src/main/res/layout/layout_list_laundry.xml" value="0.2" />
         <entry key="..\:/Kuliah/1. Perkuliahan/SMS 6/Praktek Mobile/ProjectMobileAppLaundry/app/src/main/res/layout/layout_list_menu.xml" value="0.264" />
         <entry key="..\:/Kuliah/1. Perkuliahan/SMS 6/Praktek Mobile/ProjectMobileAppLaundry/app/src/main/res/layout/layout_list_menu_order.xml" value="0.2269021739130435" />
         <entry key="..\:/Kuliah/1. Perkuliahan/SMS 6/Praktek Mobile/ProjectMobileAppLaundry/app/src/main/res/layout/layout_list_proses_laundry.xml" value="0.4" />
-        <entry key="..\:/Kuliah/1. Perkuliahan/SMS 6/Praktek Mobile/ProjectMobileAppLaundry/app/src/main/res/layout/layout_list_proses_laundry_empty.xml" value="0.20878623188405798" />
-        <entry key="..\:/Kuliah/1. Perkuliahan/SMS 6/Praktek Mobile/ProjectMobileAppLaundry/app/src/main/res/layout/layout_list_riwayat_laundry.xml" value="0.2359375" />
+        <entry key="..\:/Kuliah/1. Perkuliahan/SMS 6/Praktek Mobile/ProjectMobileAppLaundry/app/src/main/res/layout/layout_list_proses_laundry_empty.xml" value="0.49710982658959535" />
+        <entry key="..\:/Kuliah/1. Perkuliahan/SMS 6/Praktek Mobile/ProjectMobileAppLaundry/app/src/main/res/layout/layout_list_riwayat_laundry.xml" value="0.264" />
         <entry key="..\:/Kuliah/1. Perkuliahan/SMS 6/Praktek Mobile/ProjectMobileAppLaundry/app/src/main/res/layout/layout_list_riwayat_laundry_empty.xml" value="0.20878623188405798" />
         <entry key="..\:/Kuliah/1. Perkuliahan/SMS 6/Praktek Mobile/ProjectMobileAppLaundry/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.26614583333333336" />
       </map>

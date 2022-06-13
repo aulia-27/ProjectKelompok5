@@ -6,11 +6,15 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.example.projectmobileapplaundry.MainActivity.MainActivity;
+import com.example.projectmobileapplaundry.ProsesLaundry.ProsesLaundryActivity;
 import com.example.projectmobileapplaundry.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -22,9 +26,10 @@ import com.google.firebase.auth.UserProfileChangeRequest;
 public class RegisterActivity extends AppCompatActivity {
 
     private EditText editNama, editEmailRegister, editHpRegister, editPasswordRegister, editRePasswordRegister;
-    private Button btnRegisterUpload, btnBackLogin;
+    private Button btnRegisterAkun, btnBackLogin;
     private ProgressDialog progresDialog;
     private FirebaseAuth mAuth;
+    private ImageView imgBackLogin;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,11 +42,20 @@ public class RegisterActivity extends AppCompatActivity {
         editNama = findViewById(R.id.editNama);
 //        editUsernameRegister = findViewById(R.id.editUsernameRegister);
         editEmailRegister = findViewById(R.id.editEmailRegister);
-        editHpRegister = findViewById(R.id.editHpRegister);
+//        editHpRegister = findViewById(R.id.editHpRegister);
         editPasswordRegister = findViewById(R.id.editPasswordRegister);
         editRePasswordRegister = findViewById(R.id.editRePasswordRegister);
-        btnRegisterUpload = findViewById(R.id.btnRegisterUpload);
-        btnBackLogin = findViewById(R.id.btnBackLogin);
+        btnRegisterAkun = findViewById(R.id.btnRegisterAkun);
+//        btnBackLogin = findViewById(R.id.btnBackLogin);
+        imgBackLogin = findViewById(R.id.imgBackToLogin);
+
+        imgBackLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intentImgBackLogin = new Intent(new Intent(RegisterActivity.this, LoginActivity.class));
+                startActivity(intentImgBackLogin);
+            }
+        });
 
         // Initialize Firebase Auth
         mAuth = FirebaseAuth.getInstance();
@@ -50,15 +64,10 @@ public class RegisterActivity extends AppCompatActivity {
         progresDialog.setMessage("Silakan  Tunggu");
         progresDialog.setCancelable(false);
 
-        btnBackLogin.setOnClickListener(view -> {
-            finish();
-        });
-
-        btnRegisterUpload.setOnClickListener(view -> {
+        btnRegisterAkun.setOnClickListener(view -> {
             if (editNama.getText().toString().length()>0
 //                    && editUsernameRegister.getText().toString().length() > 0
                     && editEmailRegister.getText().toString().length() >  0
-                    && editHpRegister.getText().toString().length() > 0
                     && editPasswordRegister.getText().toString().length() > 0
                     && editRePasswordRegister.getText().toString().length() > 0) {
                 if (editPasswordRegister.getText().toString().equals(editRePasswordRegister.getText().toString())){
@@ -66,7 +75,6 @@ public class RegisterActivity extends AppCompatActivity {
                         register(
                                 editNama.getText().toString(),
                                 editEmailRegister.getText().toString(),
-                                editHpRegister.getText().toString(),
                                 editPasswordRegister.getText().toString()
                         );
                     } else {
@@ -84,7 +92,7 @@ public class RegisterActivity extends AppCompatActivity {
 
     }
 
-    private void register(String editNama, String editEmailRegister, String editHpRegister, String editPasswordRegister) {
+    private void register(String editNama, String editEmailRegister, String editPasswordRegister) {
         progresDialog.show();
         mAuth.createUserWithEmailAndPassword(editEmailRegister, editPasswordRegister).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
@@ -106,8 +114,8 @@ public class RegisterActivity extends AppCompatActivity {
                     }
                 } else {
                     Toast.makeText(getApplicationContext(), task.getException().getLocalizedMessage(), Toast.LENGTH_LONG).show();
+                    finish();
                 }
-                progresDialog.dismiss();
             }
         });
     }

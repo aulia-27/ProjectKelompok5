@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 
+import com.example.projectmobileapplaundry.Login.LoginActivity;
 import com.example.projectmobileapplaundry.MainActivity.MainActivity;
 
 public class SplashScreenLaundry extends AppCompatActivity {
@@ -20,7 +21,7 @@ public class SplashScreenLaundry extends AppCompatActivity {
                 }catch (Exception e){
                     e.printStackTrace();
                 }finally {
-                    Intent intent = new Intent(SplashScreenLaundry.this, MainActivity.class);
+                    Intent intent = new Intent(SplashScreenLaundry.this, LoginActivity.class);
                     startActivity(intent);
                 }
             }

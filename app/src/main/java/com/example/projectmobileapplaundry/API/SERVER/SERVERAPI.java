@@ -1,7 +1,5 @@
 package com.example.projectmobileapplaundry.API.SERVER;
 
-import com.example.projectmobileapplaundry.API.GET.SelectDaftarHargaAPI;
-import com.example.projectmobileapplaundry.API.GET.SelectListLaundryAPI;
 import com.example.projectmobileapplaundry.API.GET.SelectListProsesLaundryAPI;
 import com.example.projectmobileapplaundry.API.GET.SelectListRiwayatAPI;
 
@@ -11,17 +9,6 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class SERVERAPI {
     private static final String baseURL = "https://auliarahman27.000webhostapp.com/";
     private static Retrofit retrofit = null;
-
-    public static SelectDaftarHargaAPI getSelectDaftarHargaAPI(){
-        if (retrofit==null){
-            retrofit = new Retrofit.Builder()
-                    .baseUrl(baseURL)
-                    .addConverterFactory(GsonConverterFactory.create())
-                    .build()
-            ;
-        }
-        return retrofit.create(SelectDaftarHargaAPI.class);
-    }
 
     public static SelectListRiwayatAPI getSelectListRiwayatAPI(){
         if (retrofit==null){
@@ -43,16 +30,5 @@ public class SERVERAPI {
             ;
         }
         return retrofit.create(SelectListProsesLaundryAPI.class);
-    }
-
-    public static SelectListLaundryAPI getSelectListLaundryAPI(){
-        if (retrofit==null){
-            retrofit = new Retrofit.Builder()
-                    .baseUrl(baseURL)
-                    .addConverterFactory(GsonConverterFactory.create())
-                    .build()
-            ;
-        }
-        return retrofit.create(SelectListLaundryAPI.class);
     }
 }
