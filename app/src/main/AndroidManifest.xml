@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ProjectMobileAppLaundry">
         <activity
+            android:name=".ProsesLaundry.ProsesLaundryActivity"
+            android:exported="true" />
+        <activity
             android:name=".Profil.ProfilActivity"
             android:exported="true" /> <!-- <activity -->
         <!-- android:name=".DaftarHarga.DaftarHargaActivity" -->

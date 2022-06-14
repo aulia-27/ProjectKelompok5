@@ -39,14 +39,6 @@ public class LaundryActivity extends AppCompatActivity {
     }
 
     private void setLayoutRecylceView() {
-        imgBackMenu = findViewById(R.id.imgBackMenu);
-        imgBackMenu.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intentImgBackMenu = new Intent(new Intent(LaundryActivity.this, MainActivity.class));
-                startActivity(intentImgBackMenu);
-            }
-        });
 ////        rvListLaundry = findViewById(R.id.rvListLaundry);
 ////        laundryAdapter = new LaundryAdapter(this, laundryModels);
 //        rvListLaundry.setAdapter(laundryAdapter);

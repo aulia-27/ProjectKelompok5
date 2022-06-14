@@ -9,14 +9,10 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 
 import com.example.projectmobileapplaundry.Laundry.LaundryActivity;
-import com.example.projectmobileapplaundry.Login.LoginActivity;
-import com.example.projectmobileapplaundry.MainActivity.Adapter.MainAdapterProsesLaundry;
-import com.example.projectmobileapplaundry.MainActivity.Adapter.MainAdapterRiwayatLaundry;
 import com.example.projectmobileapplaundry.MainActivity.Adapter.MenuAdapter;
 import com.example.projectmobileapplaundry.MainActivity.Model.MenuModel;
 import com.example.projectmobileapplaundry.Profil.ProfilActivity;
@@ -133,16 +129,16 @@ public class MainActivity extends AppCompatActivity {
         }
 
 //
-//        rvProsesLaundry = findViewById(R.id.rvProsesLaundry);
-//        rvRiwayatLaundry = findViewById(R.id.rvRiwayatLaundry);
+        rvProsesLaundry = findViewById(R.id.rvProsesLaundry);
+        rvRiwayatLaundry = findViewById(R.id.rvRiwayatLaundry);
 //
 //        mainAdapterPL = new MainAdapterProsesLaundry(this, modelProsesLaundries);
-//        rvProsesLaundry.setAdapter(mainAdapterRL);
+//        rvProsesLaundry.setAdapter(mainAdapterPL);
 //        glmProsesLaundry = new GridLayoutManager(this, 4, RecyclerView.VERTICAL, false);
 //        rvProsesLaundry.setLayoutManager(glmProsesLaundry);
 //
 //        mainAdapterRL = new MainAdapterRiwayatLaundry(this, modelRiwayatLaundries);
-//        rvRiwayatLaundry.setAdapter(mainAdapterPL);
+//        rvRiwayatLaundry.setAdapter(mainAdapterRL);
 //        glmRiwayatLaundry = new GridLayoutManager(this, 4, RecyclerView.VERTICAL, false);
 //        rvRiwayatLaundry.setLayoutManager(glmProsesLaundry);
 //    }
