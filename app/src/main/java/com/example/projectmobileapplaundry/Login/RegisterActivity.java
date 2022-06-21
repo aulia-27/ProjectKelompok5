@@ -22,11 +22,11 @@ import com.google.firebase.auth.UserProfileChangeRequest;
 
 public class RegisterActivity extends AppCompatActivity {
 
-    private EditText editNama, editEmailRegister, editHpRegister, editPasswordRegister, editRePasswordRegister;
-    private Button btnRegisterAkun, btnBackLogin;
-    private ProgressDialog progresDialog;
-    private FirebaseAuth mAuth;
-    private ImageView imgBackLogin;
+    EditText editNama, editEmailRegister, editHpRegister, editPasswordRegister, editRePasswordRegister;
+    Button btnRegisterAkun, btnBackLogin;
+    ProgressDialog progresDialog;
+    FirebaseAuth mAuth;
+    ImageView imgBackLogin;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,6 +45,13 @@ public class RegisterActivity extends AppCompatActivity {
         btnRegisterAkun = findViewById(R.id.btnRegisterAkun);
 //        btnBackLogin = findViewById(R.id.btnBackLogin);
         imgBackLogin = findViewById(R.id.imgBackToLogin);
+
+        //extract the data from the propeties
+
+        String nama = editNama.getText().toString();
+        String email = editEmailRegister.getText().toString();
+        String password = editPasswordRegister.getText().toString();
+        String rePassword = editRePasswordRegister.getText().toString();
 
         imgBackLogin.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -75,6 +82,7 @@ public class RegisterActivity extends AppCompatActivity {
                                 editPasswordRegister.getText().toString()
                         );
                     } else {
+
                         Toast.makeText(getApplicationContext(), "Silakan Masukan Password Minimal  6 Kata!", Toast.LENGTH_LONG).show();
                     }
                 } else {
@@ -83,7 +91,21 @@ public class RegisterActivity extends AppCompatActivity {
 
             }
             else {
-                Toast.makeText(getApplicationContext(), "Silakan Isi Semua Data !", Toast.LENGTH_LONG).show();
+                if (nama.isEmpty()){
+                    editNama.setError("Silakan Isi Nama");
+                    return;
+                } if (email.isEmpty()){
+                    editEmailRegister.setError("Silakan Isi Email");
+                    return;
+                } if (password.isEmpty()){
+                    editPasswordRegister.setError("Silakan Isi Password");
+                    return;
+                } if (rePassword.isEmpty()){
+                    editRePasswordRegister.setError("Silakan isi Re Password");
+                    return;
+                } if (nama.isEmpty() && email.isEmpty() && email.isEmpty() && password.isEmpty() && rePassword.isEmpty()){
+                    Toast.makeText(getApplicationContext(), "Silakan Isi Semua Data !", Toast.LENGTH_LONG).show();
+                }
             }
         });
 

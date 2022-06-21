@@ -31,12 +31,13 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
 
 public class LoginActivity extends AppCompatActivity {
-    private EditText editEmail, editPassword;
-    private Button btnLogin, btnRegister;
-    private ProgressDialog progresDialog;
-    private SignInButton btnRegisterGoogle;
-    private FirebaseAuth mAuth;
-    private GoogleSignInClient googleSignInClient;
+    EditText editEmail, editPassword;
+    Button btnLogin, btnRegister;
+    TextView resetKataSandi;
+    ProgressDialog progresDialog;
+    SignInButton btnRegisterGoogle;
+    FirebaseAuth mAuth;
+    GoogleSignInClient googleSignInClient;
 
 
     @Override
@@ -44,7 +45,19 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         layoutLogin();
+        forgetPassword();
     }
+
+    private void forgetPassword() {
+        resetKataSandi = findViewById(R.id.txtLupaKataSandi);
+        resetKataSandi.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(), ForgetPassword.class));
+            }
+        });
+    }
+
     private void layoutLogin() {
         editEmail = findViewById(R.id.editEmail);
         editPassword = findViewById(R.id.editPassword);
@@ -59,7 +72,7 @@ public class LoginActivity extends AppCompatActivity {
         progresDialog.setCancelable(false);
 
         //googleSignIn
-        GoogleSignInOptions googleSignInOptions = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_GAMES_SIGN_IN)
+        GoogleSignInOptions googleSignInOptions = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestIdToken(getString(R.string.webclientid))
                 .requestEmail()
                 .build();
@@ -109,6 +122,7 @@ public class LoginActivity extends AppCompatActivity {
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful() && task.getResult() != null){
                     if(task.getResult().getUser() != null){
+
                         reload();
                     } else {
                         Toast.makeText(getApplicationContext(), "Login Gagal !", Toast.LENGTH_LONG).show();
