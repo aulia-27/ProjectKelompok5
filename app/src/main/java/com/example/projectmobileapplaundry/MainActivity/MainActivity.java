@@ -1,6 +1,7 @@
 package com.example.projectmobileapplaundry.MainActivity;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -28,9 +29,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
-    LinearLayout llMenuLaundry, llMenuRiwayat, llMenuProses;
+    CardView cdLaundry, cdRiwayat, cdProses;
     TextView txtNama, txtSemuaRiwayat, txtSemuaProsesLaundry;
-    ImageView imgUser;
+    ImageView imgProfile;
     RecyclerView rvProsesLaundry, rvRiwayatLaundry, rvMenuUtama;
     GridLayoutManager glmRiwayatLaundry, glmProsesLaundry;
     private FirebaseUser firebaseUser;
@@ -47,27 +48,27 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        cdLaundry = findViewById(R.id.cdLaundy);
+        cdRiwayat = findViewById(R.id.cdRiwayat);
+        cdProses = findViewById(R.id.cdProses);
+        imgProfile = findViewById(R.id.imgProfile);
+        rvProsesLaundry = findViewById(R.id.rvProsesLaundry);
+        rvRiwayatLaundry = findViewById(R.id.rvRiwayatLaundry);
+        txtNama = findViewById(R.id.txtUser);
+        firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
         setLayout();
         setMenu();
     }
 
     private void setMenu() {
-
-        llMenuLaundry = findViewById(R.id.llMenuLaundry);
-        llMenuRiwayat = findViewById(R.id.llMenuRiwayat);
-        llMenuProses = findViewById(R.id.llMenuProses);
-        txtSemuaRiwayat = findViewById(R.id.txtSemuaRiwayat);
-        txtSemuaProsesLaundry = findViewById(R.id.txtSemuaProsesLaundry);
-        imgUser = findViewById(R.id.imgUser);
-
-        imgUser.setOnClickListener(new View.OnClickListener() {
+        imgProfile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(getApplicationContext(), ProfilActivity.class));
             }
         });
 
-        llMenuLaundry.setOnClickListener(new View.OnClickListener() {
+        cdLaundry.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intentLlMenuLaundry = new Intent(new Intent(MainActivity.this, LaundryActivity.class));
@@ -75,7 +76,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        llMenuRiwayat.setOnClickListener(new View.OnClickListener() {
+        cdRiwayat.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intentLlMenuRiwayat = new Intent(new Intent(MainActivity.this, RiwayatActivity.class));
@@ -83,7 +84,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        llMenuProses.setOnClickListener(new View.OnClickListener() {
+        cdProses.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intentLlMenuProses = new Intent(new Intent(MainActivity.this, ProsesLaundryActivity.class));
@@ -91,57 +92,21 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        imgUser.setOnClickListener(new View.OnClickListener() {
+        imgProfile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intentImgUser = new Intent(new Intent(MainActivity.this, ProfilActivity.class));
                 startActivity(intentImgUser);
             }
         });
-
-        txtSemuaRiwayat.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intentTxtSemuaRiwayat = new Intent(new Intent(MainActivity.this, RiwayatActivity.class));
-                startActivity(intentTxtSemuaRiwayat);
-            }
-        });
-
-        txtSemuaProsesLaundry.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intentTxtSemuaProsesLaundry = new Intent(new Intent(MainActivity.this, ProsesLaundryActivity.class));
-                startActivity(intentTxtSemuaProsesLaundry);
-            }
-        });
-
     }
 
 
     private void setLayout() {
-        txtNama = findViewById(R.id.txtUser);
-        firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
-
         if (firebaseUser != null) {
             txtNama.setText(firebaseUser.getDisplayName());
         } else {
             txtNama.setText("Anonymous");
         }
-
-//
-        rvProsesLaundry = findViewById(R.id.rvProsesLaundry);
-        rvRiwayatLaundry = findViewById(R.id.rvRiwayatLaundry);
-//
-//        mainAdapterPL = new MainAdapterProsesLaundry(this, modelProsesLaundries);
-//        rvProsesLaundry.setAdapter(mainAdapterPL);
-//        glmProsesLaundry = new GridLayoutManager(this, 4, RecyclerView.VERTICAL, false);
-//        rvProsesLaundry.setLayoutManager(glmProsesLaundry);
-//
-//        mainAdapterRL = new MainAdapterRiwayatLaundry(this, modelRiwayatLaundries);
-//        rvRiwayatLaundry.setAdapter(mainAdapterRL);
-//        glmRiwayatLaundry = new GridLayoutManager(this, 4, RecyclerView.VERTICAL, false);
-//        rvRiwayatLaundry.setLayoutManager(glmProsesLaundry);
-//    }
-
     }
 }
