@@ -33,7 +33,7 @@ import com.google.firebase.auth.GoogleAuthProvider;
 public class LoginActivity extends AppCompatActivity {
     EditText editEmail, editPassword;
     Button btnLogin, btnRegister;
-    TextView resetKataSandi;
+    TextView txtLupaKataSandi, txtSingUp;
     ProgressDialog progresDialog;
     SignInButton btnRegisterGoogle;
     FirebaseAuth mAuth;
@@ -44,25 +44,12 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        layoutLogin();
-        forgetPassword();
-    }
-
-    private void forgetPassword() {
-        resetKataSandi = findViewById(R.id.txtLupaKataSandi);
-        resetKataSandi.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(), ForgetPassword.class));
-            }
-        });
-    }
-
-    private void layoutLogin() {
-        editEmail = findViewById(R.id.editEmail);
-        editPassword = findViewById(R.id.editPassword);
+        editEmail = findViewById(R.id.editEmailLogin);
+        editPassword = findViewById(R.id.editPasswordLogin);
         btnLogin = findViewById(R.id.btnLogin);
-        btnRegister = findViewById(R.id.btnRegister);
+        txtSingUp = findViewById(R.id.txtSingUp);
+        txtLupaKataSandi = findViewById(R.id.txtLupaPassword);
+        btnRegisterGoogle = findViewById(R.id.btnRegisterGoogle);
 
         // Initialize Firebase Auth
         mAuth = FirebaseAuth.getInstance();
@@ -78,8 +65,6 @@ public class LoginActivity extends AppCompatActivity {
                 .build();
         googleSignInClient = GoogleSignIn.getClient(this, googleSignInOptions);
 
-        btnRegisterGoogle = findViewById(R.id.btnRegisterGoogle);
-
         btnRegisterGoogle.setOnClickListener(view -> {
             googleLogin();
         });
@@ -94,13 +79,21 @@ public class LoginActivity extends AppCompatActivity {
         });
 
         //register
-        btnRegister.setOnClickListener(new View.OnClickListener() {
+        txtSingUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(getApplicationContext(), RegisterActivity.class));
             }
         });
+
+        txtLupaKataSandi.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(), ForgetPassword.class));
+            }
+        });
     }
+
 
     private void googleLogin(){
         Intent signInIntent = googleSignInClient.getSignInIntent();

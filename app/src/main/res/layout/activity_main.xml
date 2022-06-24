@@ -1,390 +1,295 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity.MainActivity">
+    tools:context=".MainActivity.MainActivity"
+    android:fillViewport="true">
 
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="25dp"
-        android:layout_marginTop="14dp"
-        android:layout_marginEnd="150dp"
-        android:layout_marginBottom="15dp"
-        android:text="Selamat Datang"
-        android:textColor="@color/black"
-        android:textSize="20sp"
-        android:textStyle="normal|bold"
-        app:layout_constraintBottom_toTopOf="@+id/txtUser"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/imgUser"
-        app:layout_constraintTop_toTopOf="parent" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-    <TextView
-        android:id="@+id/txtUser"
-        android:layout_width="wrap_content"
-        android:layout_height="21dp"
-        android:layout_marginStart="25dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="263dp"
-        android:text="User"
-        android:textColor="@color/black"
-        android:textSize="16sp"
-        android:textStyle="normal|bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/imgUser"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        <ImageView
+            android:id="@+id/imgProfile"
+            android:layout_width="83dp"
+            android:layout_height="81dp"
+            android:layout_marginTop="28dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.085"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@tools:sample/avatars" />
 
-    <ImageView
-        android:id="@+id/imgUser"
-        android:layout_width="76dp"
-        android:layout_height="73dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="14dp"
-        app:layout_constraintBottom_toTopOf="@+id/textView4"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_baseline_supervised_user_circle_24" />
+        <TextView
+            android:id="@+id/textView7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="28dp"
+            android:text="Selamat Datang"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.004"
+            app:layout_constraintStart_toEndOf="@+id/imgProfile"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="wrap_content"
-        android:layout_height="19dp"
-        android:layout_marginStart="15dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="342dp"
-        android:text="Kategori"
-        android:textColor="@color/black"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imgUser" />
+        <TextView
+            android:id="@+id/txtUser"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="12dp"
+            android:text="Anonymous"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/imgProfile"
+            app:layout_constraintTop_toBottomOf="@+id/textView7" />
 
-    <TextView
-        android:id="@+id/textView5"
-        android:layout_width="wrap_content"
-        android:layout_height="20dp"
-        android:layout_marginStart="15dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="338dp"
-        android:text="Proses Laundry"
-        android:textColor="@color/black"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/llMenuLaundry" />
+        <TextView
+            android:id="@+id/textView9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="Menu"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.067"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imgProfile" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvProsesLaundry"
-        android:layout_width="0dp"
-        android:layout_height="160dp"
-        android:layout_marginStart="14dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="14dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView5"
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cdLaundy"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="12dp"
+            app:cardCornerRadius="15dp"
+            app:layout_constraintEnd_toStartOf="@+id/cdRiwayat"
+            app:layout_constraintHorizontal_bias="0.08"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView9">
+
+            <LinearLayout
+                android:layout_width="100dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/imageView5"
+                    android:layout_width="70dp"
+                    android:layout_height="65dp"
+                    android:layout_gravity="center|center_horizontal"
+                    android:layout_marginTop="8dp"
+                    tools:srcCompat="@drawable/laundry" />
+
+                <TextView
+                    android:id="@+id/textView13"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:gravity="center"
+                    android:text="Laundry"
+                    android:textColor="@color/black" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/textView10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Proses Laundry"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.073"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cdLaundy" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvProsesLaundry"
+            android:layout_width="350dp"
+            android:layout_height="160dp"
+            android:layout_marginTop="12dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.49"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView10" />
 
 
-        >
+        <TextView
+            android:id="@+id/textView11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="13dp"
+            android:text="Riwayat Laundry"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.07"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/rvProsesLaundry" />
 
-    </androidx.recyclerview.widget.RecyclerView>
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cdRiwayat"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="12dp"
+            app:cardCornerRadius="15dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView9">
 
-    <TextView
-        android:id="@+id/textView6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="15dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="341dp"
-        android:text="Riwayat Laundry"
-        android:textColor="@color/black"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/rvProsesLaundry" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvRiwayatLaundry"
-        android:layout_width="0dp"
-        android:layout_height="160dp"
-        android:layout_marginStart="14dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="14dp"
-        android:layout_marginBottom="164dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView6"
-        app:layout_constraintVertical_bias="0.0">
+                <ImageView
+                    android:id="@+id/imageView6"
+                    android:layout_width="70dp"
+                    android:layout_height="65dp"
+                    android:layout_gravity="center|center_horizontal"
+                    android:layout_marginTop="8dp"
+                    tools:srcCompat="@drawable/refresh" />
 
-    </androidx.recyclerview.widget.RecyclerView>
+                <TextView
+                    android:id="@+id/textView14"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:gravity="center_horizontal"
+                    android:text="Riwayat"
+                    android:textColor="@color/black" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
 
-    <TextView
-        android:id="@+id/txtSemuaProsesLaundry"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="189dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="8dp"
-        android:text="Lihat Semua"
-        android:textColor="#225993"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/rvProsesLaundry"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/textView5" />
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cdProses"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="24dp"
+            app:cardCornerRadius="15dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.872"
+            app:layout_constraintStart_toEndOf="@+id/cdRiwayat"
+            app:layout_constraintTop_toBottomOf="@+id/textView9">
 
-    <TextView
-        android:id="@+id/txtSemuaRiwayat"
-        android:layout_width="wrap_content"
-        android:layout_height="19dp"
-        android:layout_marginStart="185dp"
-        android:layout_marginTop="11dp"
-        android:layout_marginEnd="14dp"
-        android:layout_marginBottom="11dp"
-        android:text="Lihat Semua"
-        android:textColor="#225993"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/rvRiwayatLaundry"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/textView6"
-        app:layout_constraintTop_toBottomOf="@+id/rvProsesLaundry" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
 
-    <LinearLayout
-        android:id="@+id/llMenuLaundry"
-        android:layout_width="110dp"
-        android:layout_height="110dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="4dp"
-        android:orientation="vertical"
-        app:layout_constraintEnd_toStartOf="@+id/llMenuRiwayat"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView4">
+                <ImageView
+                    android:id="@+id/imageView7"
+                    android:layout_width="70dp"
+                    android:layout_height="65dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="8dp"
+                    tools:srcCompat="@drawable/clipboard" />
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+                <TextView
+                    android:id="@+id/textView15"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:gravity="center_horizontal"
+                    android:text="Proses"
+                    android:textColor="@color/black" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
 
-            <ImageView
-                android:id="@+id/imageView3"
-                android:layout_width="75dp"
-                android:layout_height="70dp"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="7dp"
-                android:layout_marginEnd="18dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/laundry" />
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvRiwayatLaundry"
+            android:layout_width="360dp"
+            android:layout_height="160dp"
+            android:layout_marginTop="12dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.49"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView11" />
 
-            <TextView
-                android:id="@+id/textView3"
-                android:layout_width="76dp"
-                android:layout_height="0dp"
-                android:layout_marginStart="14dp"
-                android:layout_marginTop="7dp"
-                android:layout_marginEnd="18dp"
-                android:text="Laundry"
-                android:textAlignment="center"
-                android:textColor="@color/black"
-                android:textSize="16sp"
-                android:textStyle="normal|bold"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/imageView3" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
-    </LinearLayout>
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cdNotifProses"
+            android:layout_width="350dp"
+            android:layout_height="160dp"
+            android:layout_marginTop="12dp"
+            app:cardCornerRadius="15dp"
+            app:layout_constraintBottom_toTopOf="@+id/textView11"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.459"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView10"
+            app:layout_constraintVertical_bias="0.0">
 
-    <LinearLayout
-        android:id="@+id/llMenuRiwayat"
-        android:layout_width="110dp"
-        android:layout_height="110dp"
-        android:layout_marginStart="4dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="8dp"
-        app:layout_constraintEnd_toStartOf="@+id/llMenuProses"
-        app:layout_constraintStart_toEndOf="@+id/llMenuLaundry"
-        app:layout_constraintTop_toBottomOf="@+id/textView4">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#976CD0FD"
+                android:gravity="center_horizontal|center_vertical"
+                android:orientation="vertical">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+                <TextView
+                    android:id="@+id/textView17"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center|center_vertical"
+                    android:text="Tidak Ada Riwayat Proses Laundry"
+                    android:textColor="@color/black" />
 
-            <ImageView
-                android:id="@+id/imageView5"
-                android:layout_width="75dp"
-                android:layout_height="70dp"
-                android:layout_marginStart="18dp"
-                android:layout_marginTop="7dp"
-                android:layout_marginEnd="17dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/refresh" />
+                <ImageView
+                    android:id="@+id/imageView9"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:layout_gravity="center_horizontal|fill_vertical"
+                    android:layout_marginTop="15dp"
+                    tools:srcCompat="@drawable/exclamationmark" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
 
-            <TextView
-                android:id="@+id/textView9"
-                android:layout_width="76dp"
-                android:layout_height="0dp"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="18dp"
-                android:text="Riwayat"
-                android:textAlignment="center"
-                android:textColor="@color/black"
-                android:textStyle="normal|bold"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/imageView5" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
-    </LinearLayout>
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cdNotifRiwayat"
+            android:layout_width="360dp"
+            android:layout_height="160dp"
+            android:layout_marginTop="12dp"
+            app:cardCornerRadius="15dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.459"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView11">
 
-    <LinearLayout
-        android:id="@+id/llMenuProses"
-        android:layout_width="110dp"
-        android:layout_height="110dp"
-        android:layout_marginStart="4dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="16dp"
-        android:orientation="vertical"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/llMenuRiwayat"
-        app:layout_constraintTop_toBottomOf="@+id/textView4">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#976CD0FD"
+                android:gravity="center_horizontal|center_vertical"
+                android:orientation="vertical">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+                <TextView
+                    android:id="@+id/textView20"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="Tidak Ada Riwayat Laundry"
+                    android:textColor="@color/black" />
 
-            <ImageView
-                android:id="@+id/imageView6"
-                android:layout_width="75dp"
-                android:layout_height="70dp"
-                android:layout_marginStart="18dp"
-                android:layout_marginTop="7dp"
-                android:layout_marginEnd="17dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/clipboard" />
+                <ImageView
+                    android:id="@+id/imageView12"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:layout_marginTop="15dp"
+                    tools:srcCompat="@drawable/exclamationmark" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
 
-            <TextView
-                android:id="@+id/textView10"
-                android:layout_width="76dp"
-                android:layout_height="0dp"
-                android:layout_marginStart="18dp"
-                android:layout_marginTop="7dp"
-                android:layout_marginEnd="16dp"
-                android:text="Proses"
-                android:textAlignment="center"
-                android:textColor="@color/black"
-                android:textStyle="normal|bold"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/imageView6" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
-    </LinearLayout>
-
-    <FrameLayout
-        android:layout_width="382dp"
-        android:layout_height="161dp"
-        android:layout_marginStart="14dp"
-        android:layout_marginTop="7dp"
-        android:layout_marginEnd="15dp"
-        android:background="#73C8EAFD"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView5">
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <TextView
-                android:id="@+id/textView14"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="162dp"
-                android:layout_marginTop="16dp"
-                android:layout_marginEnd="162dp"
-                android:text="Tidak Ada Proses Laundry"
-                android:textColor="@color/black"
-                android:textSize="16sp"
-                android:textStyle="normal|bold"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <ImageView
-                android:id="@+id/imageView7"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_marginStart="151dp"
-                android:layout_marginTop="30dp"
-                android:layout_marginEnd="151dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView14"
-                app:srcCompat="@drawable/exclamationmark" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
-    </FrameLayout>
-
-    <FrameLayout
-        android:layout_width="382dp"
-        android:layout_height="160dp"
-        android:layout_marginStart="14dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="15dp"
-        android:background="#73C8EAFD"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView6">
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <TextView
-                android:id="@+id/textView15"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="162dp"
-                android:layout_marginTop="16dp"
-                android:layout_marginEnd="162dp"
-                android:text="Tidak Ada Proses Laundry"
-                android:textColor="@color/black"
-                android:textSize="16sp"
-                android:textStyle="normal|bold"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <ImageView
-                android:id="@+id/imageView8"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_marginStart="151dp"
-                android:layout_marginTop="30dp"
-                android:layout_marginEnd="151dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView15"
-                app:srcCompat="@drawable/exclamationmark" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
-    </FrameLayout>
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
