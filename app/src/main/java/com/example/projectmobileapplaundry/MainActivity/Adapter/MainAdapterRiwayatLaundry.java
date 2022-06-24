@@ -29,7 +29,7 @@ public class MainAdapterRiwayatLaundry extends RecyclerView.Adapter<MainAdapterR
     @NonNull
     @Override
     public MainRiwayatLaundryViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.layout_list_riwayat_laundry_empty,parent,false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.layout_list_riwayat_laundry,parent,false);
         MainRiwayatLaundryViewHolder mainRiwayatLaundryViewHolder = new MainRiwayatLaundryViewHolder(view);
         return mainRiwayatLaundryViewHolder;
     }

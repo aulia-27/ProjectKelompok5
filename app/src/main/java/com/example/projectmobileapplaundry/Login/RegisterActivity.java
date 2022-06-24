@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.projectmobileapplaundry.R;
@@ -22,8 +23,9 @@ import com.google.firebase.auth.UserProfileChangeRequest;
 
 public class RegisterActivity extends AppCompatActivity {
 
-    EditText editNama, editEmailRegister, editHpRegister, editPasswordRegister, editRePasswordRegister;
-    Button btnRegisterAkun, btnBackLogin;
+    EditText editNama, editEmailRegister, editPasswordRegister, editRePasswordRegister;
+    Button btnRegisterAkun;
+    TextView txtLogin;
     ProgressDialog progresDialog;
     FirebaseAuth mAuth;
     ImageView imgBackLogin;
@@ -32,19 +34,16 @@ public class RegisterActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
+        editNama = findViewById(R.id.editNamaRegister);
+        editEmailRegister = findViewById(R.id.editEmailRegister);
+        editPasswordRegister = findViewById(R.id.editPasswordRegister);
+        editRePasswordRegister = findViewById(R.id.editConfPassword);
+        btnRegisterAkun = findViewById(R.id.btnSingUp);
+        txtLogin = findViewById(R.id.txtLogin);
         setLayoutRegister();
     }
 
     private void setLayoutRegister() {
-        editNama = findViewById(R.id.editNama);
-//        editUsernameRegister = findViewById(R.id.editUsernameRegister);
-        editEmailRegister = findViewById(R.id.editEmailRegister);
-//        editHpRegister = findViewById(R.id.editHpRegister);
-        editPasswordRegister = findViewById(R.id.editPasswordRegister);
-        editRePasswordRegister = findViewById(R.id.editRePasswordRegister);
-        btnRegisterAkun = findViewById(R.id.btnRegisterAkun);
-//        btnBackLogin = findViewById(R.id.btnBackLogin);
-        imgBackLogin = findViewById(R.id.imgBackToLogin);
 
         //extract the data from the propeties
 
@@ -53,7 +52,7 @@ public class RegisterActivity extends AppCompatActivity {
         String password = editPasswordRegister.getText().toString();
         String rePassword = editRePasswordRegister.getText().toString();
 
-        imgBackLogin.setOnClickListener(new View.OnClickListener() {
+        txtLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intentImgBackLogin = new Intent(new Intent(RegisterActivity.this, LoginActivity.class));

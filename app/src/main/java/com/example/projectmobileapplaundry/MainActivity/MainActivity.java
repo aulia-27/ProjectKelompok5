@@ -9,13 +9,10 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
 
 import com.example.projectmobileapplaundry.Laundry.LaundryActivity;
-import com.example.projectmobileapplaundry.MainActivity.Adapter.MenuAdapter;
-import com.example.projectmobileapplaundry.MainActivity.Model.MenuModel;
 import com.example.projectmobileapplaundry.Profil.ProfilActivity;
 import com.example.projectmobileapplaundry.ProsesLaundry.ProsesLaundryActivity;
 import com.example.projectmobileapplaundry.R;
@@ -37,9 +34,6 @@ public class MainActivity extends AppCompatActivity {
     private FirebaseUser firebaseUser;
     private List<ProsesLaundryModel> modelProsesLaundries = new ArrayList<>();
     private List<RiwayatLaundryModel> modelRiwayatLaundries = new ArrayList<>();
-    private List<MenuModel> modelMenuList = new ArrayList<>();
-    MenuModel modelMenu;
-    MenuAdapter menuAdapter;
 //    MainAdapterProsesLaundry mainAdapterPL;
 //    MainAdapterRiwayatLaundry mainAdapterRL;
 

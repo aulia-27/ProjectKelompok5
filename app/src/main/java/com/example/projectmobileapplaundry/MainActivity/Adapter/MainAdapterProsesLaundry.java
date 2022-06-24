@@ -28,7 +28,7 @@ public class MainAdapterProsesLaundry extends RecyclerView.Adapter<MainAdapterPr
     @NonNull
     @Override
     public MainProsesLaundryViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.layout_list_proses_laundry_empty, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.layout_list_proses_laundry, parent, false);
         return new MainProsesLaundryViewHolder(view);
     }
 
