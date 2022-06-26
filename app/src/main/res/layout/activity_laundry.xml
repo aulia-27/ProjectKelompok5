@@ -6,88 +6,88 @@
     android:layout_height="match_parent"
     tools:context=".Laundry.LaundryActivity">
 
-
-    <TextView
-        android:id="@+id/textView7"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="30dp"
-        android:layout_marginEnd="270dp"
-        android:text="Order Laundry"
-        android:textColor="@color/black"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/textView8"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/textView8"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="269dp"
-        android:layout_marginBottom="2dp"
-        android:text="Jenis Paket Laundry"
-        android:textColor="@color/black"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/nestedScrollView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView7" />
-
     <LinearLayout
         android:id="@+id/linearLayout2"
-        android:layout_width="0dp"
-        android:layout_height="80dp"
-        android:orientation="horizontal"
+        android:layout_width="409dp"
+        android:layout_height="60dp"
+        android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintStart_toStartOf="parent"></LinearLayout>
+
+    <ScrollView
+        android:layout_width="409dp"
+        android:layout_height="668dp"
+        android:layout_marginBottom="63dp"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toBottomOf="@+id/linearLayout2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" >
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content">
 
-            <Button
-                android:id="@+id/btnPesanLaundry"
-                android:layout_width="330dp"
-                android:layout_height="50dp"
-                android:layout_marginStart="53dp"
-                android:layout_marginEnd="53dp"
-                android:layout_marginBottom="16dp"
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:text="Pesan Laundry"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent" />
+                tools:layout_editor_absoluteX="31dp"
+                tools:layout_editor_absoluteY="34dp" />
 
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Kategori Laundry"
+                tools:layout_editor_absoluteX="31dp"
+                tools:layout_editor_absoluteY="78dp" />
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                tools:layout_editor_absoluteX="16dp"
+                tools:layout_editor_absoluteY="114dp" />
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                tools:layout_editor_absoluteX="116dp"
+                tools:layout_editor_absoluteY="114dp" />
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                tools:layout_editor_absoluteX="219dp"
+                tools:layout_editor_absoluteY="114dp" />
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                tools:layout_editor_absoluteX="318dp"
+                tools:layout_editor_absoluteY="114dp" />
+
+            <androidx.core.widget.NestedScrollView
+                android:layout_width="390dp"
+                android:layout_height="360dp"
+                android:fillViewport="true"
+                tools:layout_editor_absoluteX="9dp"
+                tools:layout_editor_absoluteY="200dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical" />
+            </androidx.core.widget.NestedScrollView>
+
+            <LinearLayout
+                android:layout_width="390dp"
+                android:layout_height="120dp"
+                android:orientation="vertical"
+                tools:layout_editor_absoluteX="9dp"
+                tools:layout_editor_absoluteY="575dp"></LinearLayout>
         </androidx.constraintlayout.widget.ConstraintLayout>
-    </LinearLayout>
-
-    <androidx.core.widget.NestedScrollView
-        android:id="@+id/nestedScrollView"
-        android:layout_width="387dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="14dp"
-        android:fillViewport="true"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView8">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <include layout="@layout/layout_list_laundry" />
-        </LinearLayout>
-    </androidx.core.widget.NestedScrollView>
-
+    </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

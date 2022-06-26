@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -21,31 +22,32 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 
 public class ProfilActivity extends AppCompatActivity {
-    EditText editNamaProfil, editNoHP, editAlamat,  editEmailRegiter;
-    TextView txtVerify, txtResetPassword;
-    Button btnLogOut, btnEdit;
-    private FirebaseUser firebaseUser;
-    private DatabaseReference databaseReference;
-    private String userID;
-    FirebaseAuth firebaseAuth;
+//    EditText editNamaProfil, editNoHP, editAlamat,  editEmailRegiter;
+//    TextView txtVerify, txtGantiPassword;
+//    ImageView imgLogOut;
+//    Button btnLogOut, btnEdit;
+//    FirebaseUser firebaseUser;
+//    DatabaseReference databaseReference;
+//    String userID;
+//    FirebaseAuth firebaseAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profil);
-        txtResetPassword = findViewById(R.id.txtResetPassword);
-        firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
-
-        txtResetPassword.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-            }
-        });
-
-        layoutProfil();
-//        verivyEmail();
-        logout();
+//        txtGantiPassword = findViewById(R.id.txtGantiPassword);
+//        firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
+//
+//        txtGantiPassword.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//
+//            }
+//        });
+//
+//        layoutProfil();
+////        verivyEmail();
+//        logout();
     }
 
 //    private void verivyEmail() {
@@ -66,31 +68,31 @@ public class ProfilActivity extends AppCompatActivity {
 //            }
 //        });
 //    }
-
-    private void layoutProfil() {
-        editNamaProfil = findViewById(R.id.editNamaProfil);
-        editNoHP = findViewById(R.id.editNoHp);
-        editAlamat = findViewById(R.id.editAlamat);
-        editEmailRegiter = findViewById(R.id.editEmailProfil);
-
-
-        if (firebaseUser !=  null){
-            editNamaProfil.setText(firebaseUser.getDisplayName());
-            editEmailRegiter.setText(firebaseUser.getEmail());
-        } else {
-            editNamaProfil.setText("");
-            editEmailRegiter.setText("");
-            editNoHP.setText("");
-        }
-
-    }
-
-    private void logout() {
-        btnLogOut = findViewById(R.id.btnLogOut);
-        btnLogOut.setOnClickListener(view -> {
-            FirebaseAuth.getInstance().signOut();
-            startActivity(new Intent(getApplicationContext(), LoginActivity.class));
-            finish();
-        });
-    }
+//
+//    private void layoutProfil() {
+//        editNamaProfil = findViewById(R.id.editNamaProfil);
+//        editNoHP = findViewById(R.id.editNoHpProfil);
+//        editAlamat = findViewById(R.id.editAlamatProfil);
+//        editEmailRegiter = findViewById(R.id.editEmailProfil);
+//
+//
+//        if (firebaseUser !=  null){
+//            editNamaProfil.setText(firebaseUser.getDisplayName());
+//            editEmailRegiter.setText(firebaseUser.getEmail());
+//        } else {
+//            editNamaProfil.setText("");
+//            editEmailRegiter.setText("");
+//            editNoHP.setText("");
+//        }
+//
+//    }
+//
+//    private void logout() {
+//        btnLogOut = findViewById(R.id.imgLogOut);
+//        btnLogOut.setOnClickListener(view -> {
+//            FirebaseAuth.getInstance().signOut();
+//            startActivity(new Intent(getApplicationContext(), LoginActivity.class));
+//            finish();
+//        });
+//    }
 }

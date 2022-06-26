@@ -31,113 +31,112 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
 
 public class LoginActivity extends AppCompatActivity {
-    EditText editEmail, editPassword;
-    Button btnLogin, btnRegister;
-    TextView txtLupaKataSandi, txtSingUp;
-    ProgressDialog progresDialog;
+//    EditText editEmail, editPassword;
+//    Button btnLogin, btnRegister;
+//    TextView txtLupaKataSandi, txtSingUp;
+//    ProgressDialog progresDialog;
+//    SignInButton btnRegisterGoogle;
+//    FirebaseAuth mAuth;
+//    GoogleSignInClient googleSignInClient;
+    EditText editEmailLogin, editPasswordLogin;
+    Button btnLogin;
     SignInButton btnRegisterGoogle;
-    FirebaseAuth mAuth;
+    TextView txtLupaPassword, txtSingUp;
+    FirebaseAuth firebaseAuth;
+    ProgressDialog progressDialog;
     GoogleSignInClient googleSignInClient;
+
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        editEmail = findViewById(R.id.editEmailLogin);
-        editPassword = findViewById(R.id.editPasswordLogin);
-        btnLogin = findViewById(R.id.btnLogin);
+        editEmailLogin = findViewById(R.id.editEmailLogin);
+        editPasswordLogin = findViewById(R.id.editPasswordLogin);
+        txtLupaPassword = findViewById(R.id.txtLupaPassword);
         txtSingUp = findViewById(R.id.txtSingUp);
-        txtLupaKataSandi = findViewById(R.id.txtLupaPassword);
+        btnLogin = findViewById(R.id.btnLogin);
         btnRegisterGoogle = findViewById(R.id.btnRegisterGoogle);
 
-        // Initialize Firebase Auth
-        mAuth = FirebaseAuth.getInstance();
-        progresDialog = new ProgressDialog(LoginActivity.this);
-        progresDialog.setTitle("LOADING");
-        progresDialog.setMessage("Silakan  Tunggu");
-        progresDialog.setCancelable(false);
+        String email = editEmailLogin.getText().toString();
+        String password = editPasswordLogin.getText().toString();
 
-        //googleSignIn
-        GoogleSignInOptions googleSignInOptions = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-                .requestIdToken(getString(R.string.webclientid))
-                .requestEmail()
-                .build();
-        googleSignInClient = GoogleSignIn.getClient(this, googleSignInOptions);
+        firebaseAuth = FirebaseAuth.getInstance();
+        progressDialog = new ProgressDialog(LoginActivity.this);
+        progressDialog.setTitle("LOADING");
+        progressDialog.setMessage("Mohon Ditunggu Sebentar");
+        progressDialog.setCancelable(false);
+
+        ///googleSignIn
+        GoogleSignInOptions googleSignInOptions = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_GAMES_SIGN_IN).
+                requestIdToken(getString(R.string.webclientid)).requestEmail().build();
+        googleSignInClient = GoogleSignIn.getClient(this,googleSignInOptions);
+
+        btnLogin.setOnClickListener(view -> {
+            if (editEmailLogin.getText().length()> 0 && editPasswordLogin.getText().length()>0){
+                LoginProccess(editEmailLogin.getText().toString(), editPasswordLogin.getText().toString());
+            } else {
+                if (email.isEmpty()){
+                    editEmailLogin.setError("Silakan Masukan Email");
+                } if(password.isEmpty()){
+                    editPasswordLogin.setError("Silakan Isi Password");
+                }
+                Toast.makeText(getApplicationContext(), "Silakan Isi Username dan Password", Toast.LENGTH_LONG).show();
+            }
+        });
 
         btnRegisterGoogle.setOnClickListener(view -> {
             googleLogin();
         });
 
-        //login
-        btnLogin.setOnClickListener(view -> {
-            if (editEmail.getText().length()> 0 && editPassword.getText().length()>0){
-                login(editEmail.getText().toString(), editPassword.getText().toString());
-            } else {
-                Toast.makeText(getApplicationContext(), "Silakan Isi Username dan Password", Toast.LENGTH_LONG).show();
+        txtLupaPassword.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(), ForgetPassword.class));
             }
         });
 
-        //register
         txtSingUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(getApplicationContext(), RegisterActivity.class));
             }
         });
-
-        txtLupaKataSandi.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(), ForgetPassword.class));
-            }
-        });
     }
 
-
-    private void googleLogin(){
+    private void googleLogin() {
         Intent signInIntent = googleSignInClient.getSignInIntent();
         startActivityForResult(signInIntent, 1001);
     }
 
-    public void onBackPressed() {
-        Intent intent = new Intent(Intent.ACTION_MAIN);
-        intent.addCategory(Intent.CATEGORY_HOME);
-        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-        startActivity(intent);
-        super.onBackPressed();
-    }
-
-    private void login (String email,String password) {
-        progresDialog.show();
-        mAuth.signInWithEmailAndPassword(email, password). addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+    private void LoginProccess(String email, String password) {
+        // Initialize Firebase Auth
+        progressDialog.show();
+        firebaseAuth.signInWithEmailAndPassword(email, password). addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful() && task.getResult() != null){
-                    if(task.getResult().getUser() != null){
-
-                        reload();
+                    if (task.getResult().getUser() != null){
+                        Reload();
                     } else {
-                        Toast.makeText(getApplicationContext(), "Login Gagal !", Toast.LENGTH_LONG).show();
+                        Toast.makeText(getApplicationContext(), "Maaf, Login Gagal !", Toast.LENGTH_LONG).show();
                     }
-                } else {
-                    Toast.makeText(getApplicationContext(), "Login Gagal !", Toast.LENGTH_LONG).show();
+                    progressDialog.dismiss();
                 }
-                progresDialog.dismiss();
             }
         });
     }
 
-    public void onStart() {
+    public void onStart(){
         super.onStart();
-        // Check if user is signed in (non-null) and update UI accordingly.
-        FirebaseUser currentUser = mAuth.getCurrentUser();
-        if(currentUser != null){
-            reload();
+        FirebaseUser firebaseUser = firebaseAuth.getCurrentUser();
+        if (firebaseUser != null){
+            Reload();
         }
     }
 
-    private void reload() {
+    private void Reload() {
         startActivity(new Intent(getApplicationContext(), MainActivity.class));
     }
 
@@ -164,19 +163,19 @@ public class LoginActivity extends AppCompatActivity {
     // [START auth_with_google]
     private void firebaseAuthWithGoogle(String idToken) {
         AuthCredential credential = GoogleAuthProvider.getCredential(idToken, null);
-        mAuth.signInWithCredential(credential)
+        firebaseAuth.signInWithCredential(credential)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
                             // Sign in success, update UI with the signed-in user's information
                             Log.d("Google Sign In", "signInWithCredential:success");
-                            FirebaseUser user = mAuth.getCurrentUser();
+                            FirebaseUser user = firebaseAuth.getCurrentUser();
                         } else {
                             // If sign in fails, display a message to the user.
                             Log.w("Google Sign In", "signInWithCredential:failure", task.getException());
                         }
-                        reload();
+                        Reload();
                     }
                 });
     }

@@ -22,76 +22,65 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.UserProfileChangeRequest;
 
 public class RegisterActivity extends AppCompatActivity {
-
-    EditText editNama, editEmailRegister, editPasswordRegister, editRePasswordRegister;
-    Button btnRegisterAkun;
-    TextView txtLogin;
-    ProgressDialog progresDialog;
-    FirebaseAuth mAuth;
-    ImageView imgBackLogin;
+    EditText editNamaRegister, editEmailRegister, editPasswordRegister, editRePasswordRegister;
+    Button btnSingUp;
+    TextView txtLoginDisini;
+    ProgressDialog progressDialog;
+    FirebaseAuth firebaseAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
-        editNama = findViewById(R.id.editNamaRegister);
+        editNamaRegister = findViewById(R.id.editNamaRegister);
         editEmailRegister = findViewById(R.id.editEmailRegister);
         editPasswordRegister = findViewById(R.id.editPasswordRegister);
         editRePasswordRegister = findViewById(R.id.editConfPassword);
-        btnRegisterAkun = findViewById(R.id.btnSingUp);
-        txtLogin = findViewById(R.id.txtLogin);
-        setLayoutRegister();
+        txtLoginDisini = findViewById(R.id.txtLogin);
+        btnSingUp = findViewById(R.id.btnSingUp);
+
+        firebaseAuth = FirebaseAuth.getInstance();
+        progressDialog = new ProgressDialog(RegisterActivity.this);
+        progressDialog.setTitle("LOADING");
+        progressDialog.setMessage("Silakan  Tunggu");
+        progressDialog.setCancelable(false);
+
+        txtLoginDisini.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(), LoginActivity.class));
+            }
+        });
+
+        btnSingUp.setOnClickListener(view -> {
+            SingUp();
+        });
     }
 
-    private void setLayoutRegister() {
+    private void SingUp() {
 
-        //extract the data from the propeties
-
-        String nama = editNama.getText().toString();
+        String nama = editNamaRegister.getText().toString();
         String email = editEmailRegister.getText().toString();
         String password = editPasswordRegister.getText().toString();
         String rePassword = editRePasswordRegister.getText().toString();
 
-        txtLogin.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intentImgBackLogin = new Intent(new Intent(RegisterActivity.this, LoginActivity.class));
-                startActivity(intentImgBackLogin);
-            }
-        });
-
-        // Initialize Firebase Auth
-        mAuth = FirebaseAuth.getInstance();
-        progresDialog = new ProgressDialog(RegisterActivity.this);
-        progresDialog.setTitle("LOADING");
-        progresDialog.setMessage("Silakan  Tunggu");
-        progresDialog.setCancelable(false);
-
-        btnRegisterAkun.setOnClickListener(view -> {
-            if (editNama.getText().toString().length()>0
-//                    && editUsernameRegister.getText().toString().length() > 0
-                    && editEmailRegister.getText().toString().length() >  0
-                    && editPasswordRegister.getText().toString().length() > 0
-                    && editRePasswordRegister.getText().toString().length() > 0) {
-                if (editPasswordRegister.getText().toString().equals(editRePasswordRegister.getText().toString())){
-                    if (editPasswordRegister.getText().toString().length() > 5 && editRePasswordRegister.getText().toString().length() > 5) {
-                        register(
-                                editNama.getText().toString(),
-                                editEmailRegister.getText().toString(),
-                                editPasswordRegister.getText().toString()
-                        );
-                    } else {
-
-                        Toast.makeText(getApplicationContext(), "Silakan Masukan Password Minimal  6 Kata!", Toast.LENGTH_LONG).show();
-                    }
-                } else {
-                    Toast.makeText(getApplicationContext(), "Silakan Masukan Password Yang Sama!", Toast.LENGTH_LONG).show();
-                }
-
-            }
-            else {
-                if (nama.isEmpty()){
-                    editNama.setError("Silakan Isi Nama");
+        if (editNamaRegister.toString().length()>0 && editEmailRegister.toString().length() >  0 && editPasswordRegister.toString().length() > 0 && editRePasswordRegister.toString().length() >0){
+              if (editPasswordRegister.getText().toString().equals(editRePasswordRegister.getText().toString())) {
+                  if (editPasswordRegister.getText().toString().length() >= 6 && editRePasswordRegister.getText().toString().length() >= 6) {
+                      RegisterSingUp(editNamaRegister.getText().toString(), editEmailRegister.getText().toString(), editPasswordRegister.getText().toString());
+                  } else {
+                      editPasswordRegister.setError("Silakan Input Password Minimal 6");
+                      editRePasswordRegister.setError("Silakan Input Password Minimal 6");
+                      Toast.makeText(getApplicationContext(), "Silakan Masukan Password Minimal 6 Kata!", Toast.LENGTH_LONG).show();
+                  }
+              } else{
+                  editPasswordRegister.setError("Silakan Input Password yang Sama");
+                  editRePasswordRegister.setError("Silakan Input Password yang Sama");
+                  Toast.makeText(getApplicationContext(), "Silakan Masukan Password Yang Sama!", Toast.LENGTH_LONG).show();
+              }
+        } else {
+            if (nama.isEmpty()){
+                    editNamaRegister.setError("Silakan Isi Nama");
                     return;
                 } if (email.isEmpty()){
                     editEmailRegister.setError("Silakan Isi Email");
@@ -105,22 +94,18 @@ public class RegisterActivity extends AppCompatActivity {
                 } if (nama.isEmpty() && email.isEmpty() && email.isEmpty() && password.isEmpty() && rePassword.isEmpty()){
                     Toast.makeText(getApplicationContext(), "Silakan Isi Semua Data !", Toast.LENGTH_LONG).show();
                 }
-            }
-        });
-
+        }
     }
 
-    private void register(String editNama, String editEmailRegister, String editPasswordRegister) {
-        progresDialog.show();
-        mAuth.createUserWithEmailAndPassword(editEmailRegister, editPasswordRegister).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+    private void RegisterSingUp(String editNama, String editEmailRegister, String editPasswordRegister) {
+        progressDialog.show();
+        firebaseAuth.createUserWithEmailAndPassword(editEmailRegister, editPasswordRegister).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful() && task.getResult() != null) {
                     FirebaseUser firebaseUser = task.getResult().getUser();
                     if (firebaseUser != null) {
-                        UserProfileChangeRequest request = new UserProfileChangeRequest.Builder()
-                                .setDisplayName(editNama)
-                                .build();
+                        UserProfileChangeRequest request = new UserProfileChangeRequest.Builder().setDisplayName(editNama).build();
                         firebaseUser.updateProfile(request).addOnCompleteListener(new OnCompleteListener<Void>() {
                             @Override
                             public void onComplete(@NonNull Task<Void> task) {
@@ -142,7 +127,7 @@ public class RegisterActivity extends AppCompatActivity {
     public void onStart() {
         super.onStart();
         // Check if user is signed in (non-null) and update UI accordingly.
-        FirebaseUser currentUser = mAuth.getCurrentUser();
+        FirebaseUser currentUser = firebaseAuth.getCurrentUser();
         if(currentUser != null){
             reload();
         }
