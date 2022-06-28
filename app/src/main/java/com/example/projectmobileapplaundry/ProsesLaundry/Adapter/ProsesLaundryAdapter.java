@@ -37,10 +37,10 @@ public class ProsesLaundryAdapter extends RecyclerView.Adapter<ProsesLaundryAdap
     public void onBindViewHolder(@NonNull ProsesLaundryViewHolder holder, int position) {
         ProsesLaundryModel prosesLaundryModel = prosesLaundryModels.get(position);
         holder.txtId_PL.setText(prosesLaundryModel.getId());
+        holder.txtId_User_PL.setText(prosesLaundryModel.getId_user());
         holder.txtKodeAntrian_PL.setText(prosesLaundryModel.getKode_antrian());
         holder.txtJumlahItem_PL.setText(""+prosesLaundryModel.getJumlah_item_proses());
         holder.txtHargaTotal_PL.setText(""+prosesLaundryModel.getHarga_item_riwayat());
-        holder.txtStatus_PL.setText(prosesLaundryModel.getStatus_riwayat());
     }
 
     @Override
@@ -49,10 +49,11 @@ public class ProsesLaundryAdapter extends RecyclerView.Adapter<ProsesLaundryAdap
     }
 
     public class ProsesLaundryViewHolder extends RecyclerView.ViewHolder{
-        TextView txtId_PL, txtKodeAntrian_PL, txtJumlahItem_PL, txtHargaTotal_PL, txtStatus_PL;
+        TextView txtId_PL, txtId_User_PL, txtKodeAntrian_PL, txtJumlahItem_PL, txtHargaTotal_PL, txtStatus_PL;
         public ProsesLaundryViewHolder(@NonNull View itemView) {
             super(itemView);
             txtId_PL = itemView.findViewById(R.id.id_PL);
+            txtId_User_PL = itemView.findViewById(R.id.id_user_PL);
             txtKodeAntrian_PL = itemView.findViewById(R.id.txtAntrian_RL);
             txtJumlahItem_PL = itemView.findViewById(R.id.txtJumlahItem_RL);
             txtHargaTotal_PL = itemView.findViewById(R.id.txtHargaTotal_PL);

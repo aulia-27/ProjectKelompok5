@@ -56,14 +56,14 @@
 
                 <ImageView
                     android:id="@+id/imgProfilSetting"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="96dp"
+                    android:layout_height="88dp"
                     android:layout_marginTop="36dp"
+                    android:src="@drawable/ic_baseline_supervised_user_circle_24"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.478"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    android:src="@tools:sample/avatars" />
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <EditText
                     android:id="@+id/editNamaProfil"
@@ -115,7 +115,7 @@
                     app:layout_constraintTop_toBottomOf="@+id/editNoHpProfil" />
 
                 <Button
-                    android:id="@+id/button4"
+                    android:id="@+id/btnGantiProfile"
                     android:layout_width="140dp"
                     android:layout_height="50dp"
                     android:layout_marginTop="20dp"

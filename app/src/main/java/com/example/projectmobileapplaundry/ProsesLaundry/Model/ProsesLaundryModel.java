@@ -6,23 +6,20 @@ public class ProsesLaundryModel {
     @SerializedName("id")
     private int id;
     @SerializedName("id_user")
-    private int id_user;
+    private String id_user;
     @SerializedName("kode_antrian")
     private String kode_antrian;
     @SerializedName("jumlah_item_riwayat")
     private int jumlah_item_proses;
     @SerializedName("harga_item_riwayat")
     private double harga_item_riwayat;
-    @SerializedName("status_riwayat")
-    private String status_riwayat;
 
-    public ProsesLaundryModel(int id, int id_user, String kode_antrian, int jumlah_item_proses, double harga_item_riwayat, String status_riwayat) {
+    public ProsesLaundryModel(int id, String id_user, String kode_antrian, int jumlah_item_proses, double harga_item_riwayat) {
         this.id = id;
         this.id_user = id_user;
         this.kode_antrian = kode_antrian;
         this.jumlah_item_proses = jumlah_item_proses;
         this.harga_item_riwayat = harga_item_riwayat;
-        this.status_riwayat = status_riwayat;
     }
 
     public int getId() {
@@ -33,11 +30,11 @@ public class ProsesLaundryModel {
         this.id = id;
     }
 
-    public int getId_user() {
+    public String getId_user() {
         return id_user;
     }
 
-    public void setId_user(int id_user) {
+    public void setId_user(String id_user) {
         this.id_user = id_user;
     }
 
@@ -63,13 +60,5 @@ public class ProsesLaundryModel {
 
     public void setHarga_item_riwayat(double harga_item_riwayat) {
         this.harga_item_riwayat = harga_item_riwayat;
-    }
-
-    public String getStatus_riwayat() {
-        return status_riwayat;
-    }
-
-    public void setStatus_riwayat(String status_riwayat) {
-        this.status_riwayat = status_riwayat;
     }
 }

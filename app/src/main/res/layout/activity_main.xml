@@ -21,7 +21,7 @@
             app:layout_constraintHorizontal_bias="0.085"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:src="@tools:sample/avatars" />
+            android:src="@drawable/ic_baseline_supervised_user_circle_24" />
 
         <TextView
             android:id="@+id/textView7"

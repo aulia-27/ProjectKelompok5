@@ -22,28 +22,40 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 
 public class ProfilActivity extends AppCompatActivity {
-//    EditText editNamaProfil, editNoHP, editAlamat,  editEmailRegiter;
-//    TextView txtVerify, txtGantiPassword;
-//    ImageView imgLogOut;
-//    Button btnLogOut, btnEdit;
-//    FirebaseUser firebaseUser;
-//    DatabaseReference databaseReference;
-//    String userID;
-//    FirebaseAuth firebaseAuth;
+    EditText editNamaProfil, editNoHpProfil, editAlamatProfil,  editEmailProfil;
+    TextView txtVerify, txtGantiPassword;
+    ImageView imgLogOut;
+    Button btnLogOut, btnGantiProfile;
+    FirebaseUser firebaseUser;
+    DatabaseReference databaseReference;
+    String userID;
+    FirebaseAuth firebaseAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profil);
-//        txtGantiPassword = findViewById(R.id.txtGantiPassword);
-//        firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
-//
-//        txtGantiPassword.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//
-//            }
-//        });
+        txtGantiPassword = findViewById(R.id.txtGantiPassword);
+        editNamaProfil = findViewById(R.id.editNamaProfil);
+        editNoHpProfil = findViewById(R.id.editNoHpProfil);
+        editAlamatProfil = findViewById(R.id.editAlamatProfil);
+        editEmailProfil = findViewById(R.id.editEmailProfil);
+        imgLogOut = findViewById(R.id.imgLogOut);
+        firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
+
+        if (firebaseUser !=  null){
+            editNamaProfil.setText(firebaseUser.getDisplayName());
+            editEmailProfil.setText(firebaseUser.getEmail());
+        } else {
+            editNamaProfil.setText("");
+            editEmailProfil.setText("");
+        }
+
+        btnLogOut.setOnClickListener(view -> {
+            FirebaseAuth.getInstance().signOut();
+            startActivity(new Intent(getApplicationContext(), LoginActivity.class));
+            finish();
+        });
 //
 //        layoutProfil();
 ////        verivyEmail();
@@ -70,29 +82,6 @@ public class ProfilActivity extends AppCompatActivity {
 //    }
 //
 //    private void layoutProfil() {
-//        editNamaProfil = findViewById(R.id.editNamaProfil);
-//        editNoHP = findViewById(R.id.editNoHpProfil);
-//        editAlamat = findViewById(R.id.editAlamatProfil);
-//        editEmailRegiter = findViewById(R.id.editEmailProfil);
 //
 //
-//        if (firebaseUser !=  null){
-//            editNamaProfil.setText(firebaseUser.getDisplayName());
-//            editEmailRegiter.setText(firebaseUser.getEmail());
-//        } else {
-//            editNamaProfil.setText("");
-//            editEmailRegiter.setText("");
-//            editNoHP.setText("");
-//        }
-//
-//    }
-//
-//    private void logout() {
-//        btnLogOut = findViewById(R.id.imgLogOut);
-//        btnLogOut.setOnClickListener(view -> {
-//            FirebaseAuth.getInstance().signOut();
-//            startActivity(new Intent(getApplicationContext(), LoginActivity.class));
-//            finish();
-//        });
-//    }
 }
